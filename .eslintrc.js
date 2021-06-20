@@ -21,10 +21,10 @@ module.exports = {
     'no-unused-vars': 1,
     'no-console': 1,
     'no-unreachable': 1,
+    'prettier/prettier': 1,
 
     // Errors
     'import/no-unresolved': [2, { caseSensitive: false }],
-    'prettier/prettier': 2,
     'no-duplicate-case': 2,
     'no-undef': 2,
 

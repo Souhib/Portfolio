@@ -30,13 +30,14 @@ module.exports = {
     'no-unused-vars': 1,
     'no-console': 1,
     'no-unreachable': 1,
-    'max-len': [
-      'error',
-      {
-        'code': 80,
-        'tabWidth': 2,
-      }
-    ],
+    // @TODO fix Prettier conflict & uncomment the below line
+    // 'max-len': [
+    //   'error',
+    //   {
+    //     'code': 80,
+    //     'tabWidth': 2,
+    //   }
+    // ],
 
     // Errors
     'import/no-unresolved': [2, { caseSensitive: false }],

@@ -10,15 +10,18 @@ const useStyles = makeStyles(() =>
       width: "56px",
       height: "56px",
       background: "white",
-      border: "1px solid #FFFFFF",
     },
     'small': {
       width: "48px",
       height: "48px",
     },
-    'image': {
+    imageContainer: {
       borderRadius: 120,
+      overflow: "hidden"
     },
+    bordered: {
+      border: "1px solid #FFFFFF",
+    }
   }),
 );
 

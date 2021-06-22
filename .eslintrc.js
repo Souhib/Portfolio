@@ -45,7 +45,7 @@ module.exports = {
     indent: ['error', 2, { SwitchCase: 1 }],
     quotes: ['error', 'single'],
     'import/order': [
-      'error',
+      'warn',
       {
         groups: ['external', 'internal', 'sibling'],
         'newlines-between': 'always',

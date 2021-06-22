@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { makeStyles } from '@material-ui/core/styles'
-
 import EnedisLogo from 'assets/img/enedis.png'
 import Experience from 'components/Cards/Experience/Experience'
 import Body from 'components/Text/Body/Body'

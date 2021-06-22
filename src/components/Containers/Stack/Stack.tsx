@@ -4,7 +4,7 @@ import Box from '@material-ui/core/Box'
 
 import type ContainerProps from 'components/Containers/interfaces'
 
-const Inline: React.FunctionComponent<ContainerProps> = ({
+const Stack: React.FunctionComponent<ContainerProps> = ({
   children,
   horizontalAlign = 'center',
   spacing = 1,
@@ -29,13 +29,19 @@ const Inline: React.FunctionComponent<ContainerProps> = ({
         return null
       }
       const isLastItem = (children as React.ReactElement[]).length - 1 === index
-      return <Box mr={isLastItem ? undefined : spacing}>{child}</Box>
+
+      return <Box mb={isLastItem ? undefined : spacing}>{child}</Box>
     })
 
   return (
-    <Box display="flex" justifyContent={horizontal} alignItems={vertical}>
+    <Box
+      display="flex"
+      flexDirection="column"
+      justifyContent={horizontal}
+      alignItems={vertical}
+    >
       {childrenMap}
     </Box>
   )
 }
-export default Inline
+export default Stack

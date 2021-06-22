@@ -1,7 +1,10 @@
 import React from 'react'
-import useStyles from './styles'
-import { AvatarProps } from '../interface'
+
 import { Box } from '@material-ui/core'
+
+import { AvatarProps } from './interface'
+import useStyles from './styles'
+
 
 const Avatar: React.FunctionComponent<AvatarProps> = ({ isBordered, source, variant }) => {
   const classes = useStyles()
@@ -11,9 +14,9 @@ const Avatar: React.FunctionComponent<AvatarProps> = ({ isBordered, source, vari
       <img
         src={source}
         className={[
-          classes[variant],
+          classes[variant], classes.radius,
           isBordered && classes.bordered
-          ].join(' ')}
+        ].join(' ')}
       ></img>
     </Box>
   )

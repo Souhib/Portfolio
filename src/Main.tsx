@@ -1,8 +1,11 @@
 import React from 'react'
 
 import { makeStyles } from '@material-ui/core/styles'
+
 import EnedisLogo from 'assets/img/enedis.png'
 import Experience from 'components/Cards/Experience/Experience'
+import Header from 'components/Layout/Header/Header'
+// import Footer from 'components/Layout/Header/Header'
 import Body from 'components/Text/Body/Body'
 import Subtitle from 'components/Text/Subtitle/Subtitle'
 import Title from 'components/Text/Title/Title'
@@ -18,7 +21,7 @@ const Main: React.FunctionComponent = () => {
 
   return (
     <div className={classes.app}>
-      <div
+      {/* <div
         style={{
           display: 'flex',
           alignItems: 'center',
@@ -70,6 +73,9 @@ const Main: React.FunctionComponent = () => {
           job='Développeur front-end'
           logo={EnedisLogo}
         />
+      </div> */}
+      <div style={{marginTop: 20}}>
+        <Header></Header>
       </div>
     </div>
   )

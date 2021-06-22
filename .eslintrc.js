@@ -2,6 +2,10 @@ module.exports = {
   env: {
     es2020: true,
     node: true,
+    browser: true,
+  },
+  globals: {
+    "document": false
   },
   extends: [
     'eslint:recommended',
@@ -72,6 +76,7 @@ module.exports = {
 
     // Tolerance
     'arrow-body-style': 0,
+    'no-irregular-whitespace': 0,
     'import/extensions': [
       'error',
       'ignorePackages',

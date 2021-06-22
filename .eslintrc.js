@@ -5,10 +5,11 @@ module.exports = {
     browser: true,
   },
   globals: {
-    "document": false
+    'document': false
   },
   extends: [
     'eslint:recommended',
+    'plugin:react/recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
   ],
@@ -29,11 +30,20 @@ module.exports = {
     'no-unused-vars': 1,
     'no-console': 1,
     'no-unreachable': 1,
+    'max-len': [
+      'error',
+      {
+        'code': 80,
+        'tabWidth': 2,
+      }
+    ],
 
     // Errors
     'import/no-unresolved': [2, { caseSensitive: false }],
     'no-duplicate-case': 2,
     'no-undef': 2,
+    indent: ['error', 2, { SwitchCase: 1 }],
+    quotes: ['error', 'single'],
     'import/order': [
       'error',
       {
@@ -41,7 +51,7 @@ module.exports = {
         'newlines-between': 'always',
         pathGroups: [
           {
-            pattern: 'react',
+            pattern: 'react*',
             group: 'external',
             position: 'before',
           },
@@ -51,7 +61,7 @@ module.exports = {
             position: 'before',
           },
           {
-            pattern: 'assets',
+            pattern: 'assets*',
             group: 'internal',
           },
           {
@@ -74,6 +84,7 @@ module.exports = {
 
     // Tolerance
     'arrow-body-style': 0,
+    'react/prop-types': 0,
     'no-irregular-whitespace': 0,
     'import/extensions': [
       'error',

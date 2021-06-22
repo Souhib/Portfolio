@@ -9,13 +9,12 @@ import Title from 'components/Text/Title/Title'
 
 import useStyles from './styles'
 
-
-const Experience: React.FunctionComponent<ExperienceProps> = ({
+const Experience = ({
   company,
   date,
   job,
   logo,
-}) => {
+}: ExperienceProps) => {
   const classes = useStyles()
 
   return (

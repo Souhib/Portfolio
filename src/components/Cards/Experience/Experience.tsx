@@ -2,10 +2,10 @@ import React from 'react'
 
 import { Box, Grid } from '@material-ui/core'
 
-import { ExperienceProps } from '@components/Cards/interfaces'
-import Logo from '@components/Images/Logo/Logo'
-import Subtitle from '@components/Text/Subtitle/Subtitle'
-import Title from '@components/Text/Title/Title'
+import { ExperienceProps } from 'components/Cards/interfaces'
+import Logo from 'components/Images/Logo/Logo'
+import Subtitle from 'components/Text/Subtitle/Subtitle'
+import Title from 'components/Text/Title/Title'
 
 import useStyles from './styles'
 

@@ -19,8 +19,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "baseUrl": "src",
   },
-  "extends": "./tsconfig-base.json",
   "include": [
     "src"
   ]

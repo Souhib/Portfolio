@@ -1,1 +1,4 @@
 node_modules
+src/reportWebVitals.ts
+src/react-app-env.d.ts
+src/setupTests.ts

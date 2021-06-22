@@ -1,7 +1,6 @@
 import { makeStyles, createStyles } from '@material-ui/core/styles'
-import type { Theme } from '@material-ui/core/styles'
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     huge: {
       height: 88

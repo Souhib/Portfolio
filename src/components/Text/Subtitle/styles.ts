@@ -1,5 +1,6 @@
 import { makeStyles, createStyles } from '@material-ui/core/styles'
 import type { Theme } from '@material-ui/core/styles'
+
 import colors from '../../../theme/colors'
 
 
@@ -26,6 +27,7 @@ const useStyles = makeStyles((theme: Theme) =>
     'text': {
       color: colors.text.title,
       fontWeight: 400,
+      margin: 0,
       fontFamily: 'Montserrat, sans'
     },
   }),

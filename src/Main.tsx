@@ -1,9 +1,11 @@
 import React from 'react'
+
 import { makeStyles } from '@material-ui/core/styles'
 
-import Title from './components/Text/Title/Title'
-import Subtitle from './components/Text/Subtitle/Subtitle'
-import Body from './components/Text/Body/Body'
+import Experience from 'components/Cards/Experience/Experience'
+import Body from 'components/Text/Body/Body'
+import Subtitle from 'components/Text/Subtitle/Subtitle'
+import Title from 'components/Text/Title/Title'
 
 const useStyles = makeStyles({
   app: {
@@ -53,6 +55,21 @@ const Main: React.FunctionComponent = () => {
         <Body variant='big'>Body big</Body>
         <Body variant='medium'>Body medium</Body>
         <Body variant='small'>Body small</Body>
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          width: '100%',
+          justifyContent: 'space-around',
+        }}
+      >
+        <Experience
+          company='Société générale'
+          date='11/03/1995'
+          job='Développeur front-end'
+          logoSrc='./logo.svg'
+        />
       </div>
     </div>
   )

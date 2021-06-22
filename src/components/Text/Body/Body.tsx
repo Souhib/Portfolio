@@ -1,5 +1,7 @@
 import React from 'react'
+
 import useStyles from './styles'
+
 import { BodyProps } from '../interface'
 
 const Body: React.FunctionComponent<BodyProps> = ({ children, variant }) => {

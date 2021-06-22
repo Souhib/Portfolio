@@ -1,7 +1,7 @@
-import { makeStyles, createStyles } from '@material-ui/core/styles'
+import { createStyles, makeStyles } from '@material-ui/core/styles'
 import type { Theme } from '@material-ui/core/styles'
-import colors from '../../../theme/colors'
 
+import colors from '../../../theme/colors'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -39,6 +39,7 @@ const useStyles = makeStyles((theme: Theme) =>
     'text': {
       color: colors.text.title,
       fontWeight: 600,
+      margin: 0,
       fontFamily: 'Poppins, sans'
     },
   }),

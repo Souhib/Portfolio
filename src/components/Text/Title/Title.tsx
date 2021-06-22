@@ -1,6 +1,9 @@
 import React from 'react'
+
+import { TitleProps } from 'components/Text/interface'
+
 import useStyles from './styles'
-import { TitleProps } from '../interface'
+
 
 const Title: React.FunctionComponent<TitleProps> = ({ children, variant }) => {
   const classes = useStyles()

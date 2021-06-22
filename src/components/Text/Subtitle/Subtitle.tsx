@@ -1,6 +1,8 @@
 import React from 'react'
+
+import { SubtitleProps } from 'components/Text/interface'
+
 import useStyles from './styles'
-import { SubtitleProps } from '../interface'
 
 const Subtitle: React.FunctionComponent<SubtitleProps> = ({
   children,

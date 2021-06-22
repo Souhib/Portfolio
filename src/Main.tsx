@@ -1,8 +1,8 @@
-
 import React from 'react'
 
 import { makeStyles } from '@material-ui/core/styles'
 
+import EnedisLogo from 'assets/img/enedis.png'
 import Experience from 'components/Cards/Experience/Experience'
 import Body from 'components/Text/Body/Body'
 import Subtitle from 'components/Text/Subtitle/Subtitle'
@@ -69,7 +69,7 @@ const Main: React.FunctionComponent = () => {
           company='Société générale'
           date='11/03/1995'
           job='Développeur front-end'
-          logoSrc='./logo.svg'
+          logo={EnedisLogo}
         />
       </div>
     </div>

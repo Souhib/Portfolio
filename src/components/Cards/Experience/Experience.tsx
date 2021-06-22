@@ -14,14 +14,14 @@ const Experience: React.FunctionComponent<ExperienceProps> = ({
   company,
   date,
   job,
-  logoSrc,
+  logo,
 }) => {
   const classes = useStyles()
 
   return (
     <Box mt={4} mb={4} className={classes['experience-card']}>
       <Box mb={2}>
-        <Logo logo='enedis' variant='big' />
+        <Logo logo={logo} variant='big' />
       </Box>
       <Grid container spacing={1}>
         <Grid item xs={12}>

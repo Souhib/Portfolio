@@ -11,7 +11,7 @@ const Logo: React.FunctionComponent<LogoProps> = ({ logo, variant }) => {
     <Box className={classes.logo}>
       <img
         className={classes[variant]}
-        src={`../../../assets/img/${logo}.png`}
+        src={logo}
       />
     </Box>
   )

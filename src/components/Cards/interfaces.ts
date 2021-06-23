@@ -12,7 +12,7 @@ export interface TechnologieProps {
   logo: string
 }
 
-export type EducationProps = {
+export interface EducationProps {
   diplomaName: string
   logo: string
   bgColor: string

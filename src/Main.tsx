@@ -9,13 +9,13 @@ import Education from 'components/Cards/Education/Education'
 import Experience from 'components/Cards/Experience/Experience'
 import Footer from 'components/Layout/Footer/Footer'
 import Header from 'components/Layout/Header/Header'
-import Body from 'components/Text/Body/Body'
-import Subtitle from 'components/Text/Subtitle/Subtitle'
-import Title from 'components/Text/Title/Title'
 
 const useStyles = makeStyles({
   app: {
     height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    padding: '32px',
   },
 })
 

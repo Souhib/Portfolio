@@ -7,10 +7,7 @@ import Avatar from 'components/Images/Avatar/Avatar'
 import Subtitle from 'components/Text/Subtitle/Subtitle'
 import Title from 'components/Text/Title/Title'
 
-import useStyles from './styles'
-
 const Header: React.FunctionComponent = () => {
-  const classes = useStyles()
 
   return (
     <Inline spacing={3} horizontalAlign="left">
@@ -18,7 +15,9 @@ const Header: React.FunctionComponent = () => {
       <Stack horizontalAlign="left" verticalAlign="left" spacing={2}>
         <Title variant="big">Rayan Keddache</Title>
         <Subtitle variant="big">Front End Engineer @ Café</Subtitle>
-        <Subtitle variant="big">#OpenToWork - End of studies internship</Subtitle>
+        <Subtitle variant="big">
+          #OpenToWork - End of studies internship
+        </Subtitle>
       </Stack>
     </Inline>
   )

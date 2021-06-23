@@ -30,6 +30,10 @@ module.exports = {
     'no-unused-vars': 1,
     'no-console': 1,
     'no-unreachable': 1,
+    'react/jsx-closing-bracket-location': ['warn', 'line-aligned'],
+    'react/jsx-curly-newline': 1,
+    'react/jsx-first-prop-new-line': 1,
+    'react/jsx-wrap-multilines': 1,
     // @TODO fix Prettier conflict & uncomment the below line
     // 'max-len': [
     //   'error',
@@ -45,6 +49,8 @@ module.exports = {
     'no-undef': 2,
     indent: ['error', 2, { SwitchCase: 1 }],
     quotes: ['error', 'single'],
+    'jsx-quotes': ['error', 'prefer-single'],
+    'react/jsx-max-props-per-line': 2,
     'import/order': [
       'warn',
       {

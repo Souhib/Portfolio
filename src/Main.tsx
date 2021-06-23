@@ -21,7 +21,7 @@ const Main: React.FunctionComponent = () => {
 
   return (
     <div className={classes.app}>
-      <div
+      {/* <div
         style={{
           display: 'flex',
           alignItems: 'center',
@@ -73,6 +73,9 @@ const Main: React.FunctionComponent = () => {
           job='Développeur front-end'
           logo={EnedisLogo}
         />
+      </div> */}
+      <div style={{marginTop: 20}}>
+        <Header></Header>
       </div>
       <div style={{marginTop: 20}}>
         <Header></Header>

@@ -6,12 +6,13 @@ import useStyles from './styles'
 
 const Subtitle: React.FunctionComponent<SubtitleProps> = ({
   children,
-  variant,
+  textAlign = 'left',
+  variant
 }) => {
   const classes = useStyles()
 
   return (
-    <h5 className={[classes.text, classes[variant]].join(' ')}>{children}</h5>
+    <h5 className={[classes.text, classes[variant]].join(' ')} style={{ textAlign: textAlign }}>{children}</h5>
   )
 }
 

@@ -9,13 +9,13 @@ const useStyles = makeStyles((theme: Theme) =>
     'big': {
       fontSize: 32,
       [theme.breakpoints.down('sm')]: {
-        fontSize: 24
+        fontSize: 16
       },
     },
     'medium': {
       fontSize: 24,
       [theme.breakpoints.down('sm')]: {
-        fontSize: 16
+        fontSize: 14
       },
     },
     'small': {

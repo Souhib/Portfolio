@@ -15,11 +15,10 @@ const useStyles = makeStyles(() =>
       width: '48px',
       height: '48px',
     },
-    radius: {
-      borderRadius: 120
-    },
     imageContainer: {
-      overflow: 'hidden'
+      overflow: 'hidden',
+      lineHeight: 0,
+      borderRadius: '50%',
     },
     bordered: {
       border: '1px solid #FFFFFF',

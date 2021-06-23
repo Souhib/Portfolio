@@ -1,4 +1,4 @@
 export interface LogoProps {
   logo: string
-  variant: "huge" | "big" | "medium" | "small" | "tiny"
+  variant: 'huge' | 'big' | 'medium' | 'small' | 'tiny'
 }

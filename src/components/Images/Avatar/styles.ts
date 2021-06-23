@@ -2,18 +2,25 @@ import { makeStyles, createStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles(() =>
   createStyles({
-    'big': {
+    'huge': {
       width: '200px',
       height: '200px',
+    },
+    'big': {
+      width: '72px',
+      height: '72px'
     },
     'medium': {
       width: '56px',
       height: '56px',
-      background: 'white',
     },
     'small': {
       width: '48px',
       height: '48px',
+    },
+    'tiny': {
+      width: '40px',
+      height: '40px',
     },
     imageContainer: {
       overflow: 'hidden',
@@ -21,7 +28,7 @@ const useStyles = makeStyles(() =>
       borderRadius: '50%',
     },
     bordered: {
-      border: '1px solid #FFFFFF',
+      border: '2px solid #FFFFFF',
     }
   }),
 );

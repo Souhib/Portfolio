@@ -10,13 +10,14 @@ const Avatar: React.FunctionComponent<AvatarProps> =
   const classes = useStyles()
 
   return (
-    <Box className={classes.imageContainer}>
+    <Box className={[
+      classes.imageContainer,
+      isBordered && classes.bordered
+    ].join(' ')}
+    >
       <img
         src={source}
-        className={[
-          classes[variant],
-          isBordered && classes.bordered
-        ].join(' ')}
+        className={classes[variant]}
       />
     </Box>
   )

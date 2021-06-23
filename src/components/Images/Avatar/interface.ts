@@ -1,5 +1,5 @@
 export interface AvatarProps {
   source: string
-  variant: 'big' | 'medium' | 'small'
+  variant: 'huge' | 'big' | 'medium' | 'small' | 'tiny'
   isBordered?: boolean
 }

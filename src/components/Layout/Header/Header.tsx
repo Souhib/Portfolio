@@ -1,7 +1,9 @@
 import React from 'react'
 
+import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+
 import picture from 'assets/img/profile_picture.png'
-import Inline from 'components/Containers/Inline/Inline'
 import Stack from 'components/Containers/Stack/Stack'
 import Avatar from 'components/Images/Avatar/Avatar'
 import Subtitle from 'components/Text/Subtitle/Subtitle'
@@ -9,17 +11,20 @@ import Title from 'components/Text/Title/Title'
 
 const Header: React.FunctionComponent = () => {
 
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
-    <Inline spacing={3} horizontalAlign="left">
+    <Stack isRow={!isMobile} spacing={2}>
       <Avatar isBordered={false} variant="big" source={picture} />
-      <Stack horizontalAlign="left" verticalAlign="left" spacing={2}>
-        <Title variant="big">Rayan Keddache</Title>
-        <Subtitle variant="big">Front End Engineer @ Café</Subtitle>
-        <Subtitle variant="big">
+      <Stack spacing={2} horizontalAlign={isMobile ? 'center' : 'left'}>
+        <Title variant="big" textAlign={isMobile ? 'center' : 'left'}>Souhib Keddache</Title>
+        <Subtitle variant="big" textAlign={isMobile ? 'center' : 'left'}>Front End Engineer @ Café</Subtitle>
+        <Subtitle variant="big" textAlign={isMobile ? 'center' : 'left'}>
           #OpenToWork - End of studies internship
         </Subtitle>
       </Stack>
-    </Inline>
+    </Stack>
   )
 }
 

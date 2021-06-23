@@ -40,8 +40,8 @@ const Stack: React.FunctionComponent<ContainerProps> = ({
     <Box
       display="flex"
       flexDirection={isRow ? 'row' : 'column'}
-      justifyContent={horizontal}
-      alignItems={vertical}
+      justifyContent={vertical}
+      alignItems={horizontal}
     >
       {childrenMap}
     </Box>

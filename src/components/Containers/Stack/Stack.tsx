@@ -6,21 +6,20 @@ import type ContainerProps from 'components/Containers/interfaces'
 
 const Stack: React.FunctionComponent<ContainerProps> = ({
   children,
-  horizontalAlign = 'center',
+  horizontalAlign,
   isRow,
   spacing = 1,
-  verticalAlign = 'center',
+  verticalAlign,
 }) => {
-  const horizontal =
-    horizontalAlign === 'center'
-      ? 'center'
-      : horizontalAlign === 'left'
-        ? 'flex-start'
-        : 'flex-end'
+  const horizontal = horizontalAlign === 'left'
+    ? 'flex-start'
+    : horizontalAlign === 'right' 
+      ? 'flex-end' 
+      : horizontalAlign
   const vertical =
     verticalAlign === 'center'
       ? 'center'
-      : verticalAlign === 'left'
+      : verticalAlign === 'top'
         ? 'flex-start'
         : 'flex-end'
 
@@ -32,16 +31,18 @@ const Stack: React.FunctionComponent<ContainerProps> = ({
       const isLastItem = (children as React.ReactElement[]).length - 1 === index
 
       return isRow ? 
-        <Box mr={isLastItem ? undefined : spacing}>{child}</Box> 
+        <Box 
+          mr={isLastItem ? undefined : spacing}
+        >{child}</Box> 
         : <Box mb={isLastItem ? undefined : spacing}>{child}</Box>
     })
 
   return (
     <Box
-      display="flex"
+      display='flex'
       flexDirection={isRow ? 'row' : 'column'}
-      justifyContent={vertical}
-      alignItems={horizontal}
+      justifyContent={horizontalAlign ? horizontal : undefined}
+      alignItems={verticalAlign ? vertical : undefined}
     >
       {childrenMap}
     </Box>

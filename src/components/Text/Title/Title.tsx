@@ -9,7 +9,10 @@ const Title: React.FunctionComponent<TitleProps> = ({ children, variant, textAli
   const classes = useStyles()
 
   return (
-    <h2 className={[classes.text, classes[variant]].join(' ')} style={{ textAlign: textAlign }}>{children}</h2>
+    <h2
+      className={[classes.text, classes[variant]].join(' ')}
+      style={{ textAlign: textAlign }}
+    >{children}</h2>
   )
 }
 

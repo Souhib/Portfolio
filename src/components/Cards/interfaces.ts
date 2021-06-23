@@ -11,3 +11,9 @@ export interface TechnologieProps {
   language: string
   logo: string
 }
+
+export type EducationProps = {
+  diplomaName: string
+  logo: string
+  bgColor: string
+}

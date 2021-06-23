@@ -2,7 +2,10 @@ import React from 'react'
 
 import { makeStyles } from '@material-ui/core/styles'
 
+import AhliaLogo from 'assets/img/ahlia.png'
 import EnedisLogo from 'assets/img/enedis.png'
+import EpitechLogo from 'assets/img/epitech.png'
+import Education from 'components/Cards/Education/Education'
 import Experience from 'components/Cards/Experience/Experience'
 import Footer from 'components/Layout/Footer/Footer'
 import Header from 'components/Layout/Header/Header'
@@ -82,6 +85,12 @@ const Main: React.FunctionComponent = () => {
       </div>
       <div style={{marginTop: 20}}>
         <Footer></Footer>
+      </div>
+      <div style={{marginTop: 20}}>
+        <Education diplomaName="Master’s degree in Computer Science" logo={EpitechLogo} bgColor="#122767"></Education>
+      </div>
+      <div style={{marginTop: 20}}>
+        <Education diplomaName="Master of Science Degree in Engineering Management" logo={AhliaLogo} bgColor="#930B23"></Education>
       </div>
     </div>
   )

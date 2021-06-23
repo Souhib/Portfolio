@@ -7,6 +7,7 @@ import type ContainerProps from 'components/Containers/interfaces'
 const Stack: React.FunctionComponent<ContainerProps> = ({
   children,
   horizontalAlign = 'center',
+  isRow,
   spacing = 1,
   verticalAlign = 'center',
 }) => {
@@ -30,13 +31,15 @@ const Stack: React.FunctionComponent<ContainerProps> = ({
       }
       const isLastItem = (children as React.ReactElement[]).length - 1 === index
 
-      return <Box mb={isLastItem ? undefined : spacing}>{child}</Box>
+      return isRow ? 
+        <Box mr={isLastItem ? undefined : spacing}>{child}</Box> 
+        : <Box mb={isLastItem ? undefined : spacing}>{child}</Box>
     })
 
   return (
     <Box
       display="flex"
-      flexDirection="column"
+      flexDirection={isRow ? 'row' : 'column'}
       justifyContent={horizontal}
       alignItems={vertical}
     >

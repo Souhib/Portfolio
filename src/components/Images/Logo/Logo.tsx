@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Box, Grid } from '@material-ui/core'
+import { Box } from '@material-ui/core'
 
 import { LogoProps } from './interfaces'
 import useStyles from './styles'

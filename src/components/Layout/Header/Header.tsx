@@ -4,34 +4,47 @@ import { useTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 import { 
-  ProfilePicture, 
-  Linkedin, 
-  Github,
-  Contact
+  ProfilePictureLogo, 
+  LinkedinLogo, 
+  GithubLogo,
+  ContactLogo
 } from 'assets/img'
+import Clickable from 'components/Containers/Clickable/Clickable'
 import Stack from 'components/Containers/Stack/Stack'
 import Avatar from 'components/Images/Avatar/Avatar'
 import Subtitle from 'components/Text/Subtitle/Subtitle'
 import Title from 'components/Text/Title/Title'
+const data = {
+  socials: {
+    mail: 'mailto:souhib.trabelsi@epitech.eu',
+    linkedin: 'https://www.linkedin.com/in/keddache/',
+    github: 'https://github.com/Souhib'
+  }
+}
 
 const Header: React.FunctionComponent = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
   const responsiveHorizontal = isMobile ? 'center' : 'left'
+  const goToLinkedin = () => window.open(data.socials.linkedin, '_blank')
+  const goToGithub = () => window.open(data.socials.github, '_blank')
+  const mailTo = () => window.open(data.socials.mail, '_blank')
+
   return (
     <Stack
       isRow
-      horizontalAlign='space-between'
+      horizontalAlign={isMobile ? 'center' : 'space-between'}
     >
       <Stack
         isRow={!isMobile}
         verticalAlign='center'
+        horizontalAlign='center'
         spacing={2}
       >
         <Avatar
           isBordered={false}
           variant='huge'
-          source={ProfilePicture}
+          source={ProfilePictureLogo}
         />
         <Stack spacing={2}>
           <Title
@@ -50,27 +63,35 @@ const Header: React.FunctionComponent = () => {
           </Subtitle>
         </Stack>
       </Stack>
-      <Stack
-        isRow
-        verticalAlign='center'
-        spacing={2}
-      >
-        <Avatar
-          isBordered
-          source={Linkedin}
-          variant='medium'
-        />
-        <Avatar
-          isBordered
-          source={Contact}
-          variant='medium'
-        />
-        <Avatar
-          isBordered
-          source={Github}
-          variant='medium'
-        />
-      </Stack>
+      { !isMobile && (
+        <Stack
+          isRow
+          verticalAlign='center'
+          spacing={2}
+        >
+          <Clickable onClick={goToLinkedin}>
+            <Avatar
+              isBordered
+              source={LinkedinLogo}
+              variant='small'
+            />
+          </Clickable>
+          <Clickable onClick={mailTo}>
+            <Avatar
+              isBordered
+              source={ContactLogo}
+              variant='big'
+            />
+          </Clickable>
+          <Clickable onClick={goToGithub}>
+            <Avatar
+              isBordered
+              source={GithubLogo}
+              variant='small'
+            />
+          </Clickable>
+        </Stack>
+      )}
     </Stack>
   )
 }

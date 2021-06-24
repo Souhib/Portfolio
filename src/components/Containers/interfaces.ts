@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
- type ContainerProps = {
+export interface ContainerProps {
   children: ReactNode
   horizontalAlign?: 'left' | 'center' | 'right' | 'space-between'
   isRow?: boolean
@@ -8,4 +8,7 @@ import { ReactNode } from 'react';
   verticalAlign?: 'top' | 'center' | 'bottom'
 }
 
-export default ContainerProps
+export interface ClickableProps {
+  children: ReactNode
+  onClick(): void
+}

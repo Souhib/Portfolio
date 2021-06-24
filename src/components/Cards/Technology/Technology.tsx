@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Box, Grid } from '@material-ui/core'
+import { Box } from '@material-ui/core'
 
 import { TechnologieProps } from 'components/Cards/interfaces'
 import Stack from 'components/Containers/Stack/Stack'
@@ -28,11 +28,21 @@ const Technologie: React.FunctionComponent<TechnologieProps> = ({
     >
       <Title variant='big'>{language}</Title>
       <ul>
-        <Stack spacing={1} horizontalAlign="left">
-          {companies.map((company, index) => {
+        <Stack
+          spacing={1}
+          horizontalAlign='left'
+        >
+          {companies && companies.map((company, index) => {
             return (
-              <li key={index} style={{ paddingLeft: 16 }}>
-                <Stack isRow spacing={1} horizontalAlign="left">
+              <li
+                key={index}
+                style={{ paddingLeft: 16 }}
+              >
+                <Stack
+                  isRow
+                  spacing={1}
+                  horizontalAlign='left'
+                >
                   <Subtitle variant='medium'>●</Subtitle>
                   <Subtitle variant='medium'>{company}</Subtitle>
                 </Stack>
@@ -42,7 +52,10 @@ const Technologie: React.FunctionComponent<TechnologieProps> = ({
         </Stack>
       </ul>
       <Box className={classes.logoBottomRight}>
-        <Logo logo={logo} variant='huge' />
+        <Logo
+          logo={logo}
+          variant='huge'
+        />
       </Box>
     </Box>
   )

@@ -2,7 +2,7 @@ import React, { Children } from 'react'
 
 import Box from '@material-ui/core/Box'
 
-import type ContainerProps from 'components/Containers/interfaces'
+import { ContainerProps } from 'components/Containers/interfaces'
 
 const Stack: React.FunctionComponent<ContainerProps> = ({
   children,

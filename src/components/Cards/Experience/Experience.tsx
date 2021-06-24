@@ -18,15 +18,31 @@ const Experience = ({
   const classes = useStyles()
 
   return (
-    <Box mt={4} mb={4} className={classes['experience-card']}>
+    <Box
+      mt={4}
+      mb={4}
+      className={classes['experience-card']}
+    >
       <Box mb={2}>
-        <Logo logo={logo} variant='big' />
+        <Logo
+          logo={logo}
+          variant='big'
+        />
       </Box>
-      <Grid container spacing={1}>
-        <Grid item xs={12}>
+      <Grid
+        container
+        spacing={1}
+      >
+        <Grid
+          item
+          xs={12}
+        >
           <Title variant='tiny'>{job}</Title>
         </Grid>
-        <Grid item xs={12}>
+        <Grid
+          item
+          xs={12}
+        >
           <Subtitle variant='small'>{company}</Subtitle>
         </Grid>
       </Grid>

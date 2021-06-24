@@ -8,7 +8,10 @@ const Body: React.FunctionComponent<BodyProps> = ({ children, variant, textAlign
   const classes = useStyles()
 
   return (
-    <p className={[classes.text, classes[variant]].join(' ')} style={{ textAlign: textAlign }}>{children}</p>
+    <p
+      className={[classes.text, classes[variant]].join(' ')}
+      style={{ textAlign: textAlign }}
+    >{children}</p>
   )
 }
 

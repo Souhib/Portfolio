@@ -12,10 +12,16 @@ const Education: React.FunctionComponent<EducationProps> = ({ diplomaName, logo,
   const classes = useStyles()
 
   return (
-    <Box bgcolor={bgColor} className={classes['education-card']}>
+    <Box
+      bgcolor={bgColor}
+      className={classes['education-card']}
+    >
       <Title variant='big' >{diplomaName}</Title>
       <Box className={classes['logo-position']}>
-        <Logo logo={logo} variant='big' />
+        <Logo
+          logo={logo}
+          variant='big'
+        />
       </Box>
     </Box>
   )

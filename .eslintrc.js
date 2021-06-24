@@ -5,7 +5,7 @@ module.exports = {
     browser: true,
   },
   globals: {
-    'document': false
+    document: false,
   },
   extends: [
     'eslint:recommended',
@@ -33,7 +33,12 @@ module.exports = {
     'react/jsx-closing-bracket-location': ['warn', 'line-aligned'],
     'react/jsx-curly-newline': 1,
     'react/jsx-first-prop-new-line': 1,
+    'react/self-closing-comp': 1,
     'react/jsx-wrap-multilines': 1,
+    'react/jsx-curly-brace-presence': [
+      1,
+      { props: 'never', children: 'never' },
+    ],
     // @TODO fix Prettier conflict & uncomment the below line
     // 'max-len': [
     //   'error',

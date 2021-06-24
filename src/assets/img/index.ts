@@ -1,13 +1,17 @@
-import Contact from './contact.svg'
-import Enedis from './enedis.png'
-import Github from './github.svg'
-import Linkedin from './linkedin.svg'
-import ProfilePicture from './profile_picture.png'
+import AhliaLogo from './ahlia.png'
+import ContactLogo from './contact.svg'
+import EnedisLogo from './enedis.png'
+import EpitechLogo from './epitech.png'
+import GithubLogo from './github.svg'
+import LinkedinLogo from './linkedin.svg'
+import ProfilePictureLogo from './profile_picture.png'
 
-export { 
-  Enedis,
-  Github,
-  Linkedin,
-  ProfilePicture,
-  Contact,
+export {
+  EnedisLogo,
+  GithubLogo,
+  LinkedinLogo,
+  ProfilePictureLogo,
+  ContactLogo,
+  EpitechLogo,
+  AhliaLogo
 }

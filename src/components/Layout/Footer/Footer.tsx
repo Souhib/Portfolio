@@ -39,6 +39,7 @@ const Footer: React.FunctionComponent = () => {
         >
           <Clickable onClick={goToLinkedin}>
             <Avatar
+              isAnimated
               isBordered
               source={LinkedinLogo}
               variant='small'
@@ -55,6 +56,7 @@ const Footer: React.FunctionComponent = () => {
           )}
           <Clickable onClick={goToGithub}>
             <Avatar
+              isAnimated
               isBordered
               source={GithubLogo}
               variant='small'

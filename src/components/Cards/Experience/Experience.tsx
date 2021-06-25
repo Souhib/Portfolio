@@ -26,7 +26,7 @@ const Experience = ({
       <Box mb={2}>
         <Logo
           logo={logo}
-          variant='big'
+          variant='tiny'
         />
       </Box>
       <Grid

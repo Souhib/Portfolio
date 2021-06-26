@@ -5,6 +5,8 @@ import { SubtitleProps } from 'components/Text/interface'
 import useStyles from './styles'
 
 const Subtitle: React.FunctionComponent<SubtitleProps> = ({
+  animation,
+  animationDelay,
   children,
   textAlign = 'left',
   variant
@@ -13,8 +15,16 @@ const Subtitle: React.FunctionComponent<SubtitleProps> = ({
 
   return (
     <h5
-      className={[classes.text, classes[variant]].join(' ')}
-      style={{ textAlign: textAlign }}
+      className={[
+        classes.text,
+        classes[variant], 
+        classes.subtitle, 
+        animation && classes[animation]
+      ].join(' ')}
+      style={{ 
+        animationDelay: animation && animationDelay ? animationDelay : undefined,
+        textAlign: textAlign,
+      }}
     >{children}</h5>
   )
 }

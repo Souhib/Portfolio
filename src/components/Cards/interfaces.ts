@@ -1,6 +1,8 @@
 export type ExperienceProps = {
   company: string
   date: string
+  stack: string
+  bgColor: string
   job: string
   logo: string
 }

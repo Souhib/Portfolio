@@ -33,6 +33,7 @@ const Header: React.FunctionComponent = () => {
   return (
     <Stack
       isRow
+      verticalAlign='center'
       horizontalAlign={isMobile ? 'center' : 'space-between'}
     >
       <Stack

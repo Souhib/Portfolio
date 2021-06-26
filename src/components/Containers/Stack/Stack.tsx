@@ -5,7 +5,9 @@ import Box from '@material-ui/core/Box'
 import { ContainerProps } from 'components/Containers/interfaces'
 
 const Stack: React.FunctionComponent<ContainerProps> = ({
+  bgColor,
   children,
+  className,
   horizontalAlign,
   isRow,
   spacing = 1,
@@ -29,23 +31,24 @@ const Stack: React.FunctionComponent<ContainerProps> = ({
         return null
       }
       const isLastItem = (children as React.ReactElement[]).length - 1 === index
-
       return isRow ? 
         <Box 
           mr={isLastItem ? undefined : spacing}
         >{child}</Box> 
         : <Box mb={isLastItem ? undefined : spacing}>{child}</Box>
     })
-
   return (
     <Box
+      bgcolor={bgColor}
+      className={className}
       display='flex'
       flexDirection={isRow ? 'row' : 'column'}
-      justifyContent={horizontalAlign ? horizontal : undefined}
-      alignItems={verticalAlign ? vertical : undefined}
+      alignItems={isRow ? vertical : horizontal}
+      justifyContent={isRow ? horizontal : vertical}
     >
       {childrenMap}
     </Box>
   )
 }
+
 export default Stack

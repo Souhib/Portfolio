@@ -11,3 +11,8 @@ body {
 h2 {
   line-height: 1;
 }
+
+.slick-slide {
+  margin-right: 32px;
+  width: fit-content !important;
+}

@@ -19,7 +19,6 @@ import Footer from 'components/Layout/Footer/Footer'
 import Header from 'components/Layout/Header/Header'
 import { useWindowSize } from 'functions/useWindowSize'
 
-
 const useStyles = makeStyles({
   app: {
     height: '100%',
@@ -35,25 +34,29 @@ const experiences = [
     bgColor: '#003371',
     company: 'Enedis',
     date: 'May - Jun 20',
+    stack: 'CSS | JS | C++',
     source: EnedisLogo,
   },
   {
     job: 'Frontend Engineer',
     bgColor: '#092D32',
     company: 'Kookaï',
+    stack: 'CSS | JS | C++',
     date: 'Jul - Sep 20',
     source: KookaiLogo,
   },
   {
     job: 'Lead tech integration',
     bgColor: '#000E23',
+    stack: 'CSS | JS | C++',
     company: 'Air France',
     date: 'Oct 20 - Jan 21',
     source: AirFranceLogo
   },
   {
     job: 'Backend Engineer',
-    bgColor: '#000E23',
+    bgColor: '#42004A',
+    stack: 'CSS | JS | C++',
     date: 'Feb 20 - May 21',
     company: 'Cloudeasieer',
     source: CloudeasierLogo
@@ -61,6 +64,7 @@ const experiences = [
   {
     job: 'Frontend Engineer',
     bgColor: '#003371',
+    stack: 'CSS | JS | C++',
     company: 'Enedis',
     date: 'May - Jun 20',
     source: EnedisLogo,
@@ -69,11 +73,13 @@ const experiences = [
     job: 'Frontend Engineer',
     bgColor: '#092D32',
     company: 'Kookaï',
+    stack: 'CSS | JS | C++',
     date: 'Jul - Sep 20',
     source: KookaiLogo,
   },
   {
     job: 'Lead tech integration',
+    stack: 'CSS | JS | C++',
     bgColor: '#000E23',
     company: 'Air France',
     date: 'Oct 20 - Jan 21',
@@ -81,7 +87,8 @@ const experiences = [
   },
   {
     job: 'Backend Engineer',
-    bgColor: '#000E23',
+    stack: 'CSS | JS | C++',
+    bgColor: '#42004A',
     date: 'Feb 20 - May 21',
     company: 'Cloudeasieer',
     source: CloudeasierLogo
@@ -91,31 +98,36 @@ const experiences = [
 const Main: React.FunctionComponent = () => {
   const classes = useStyles()
   const sliderProps = {
-    dots: true,
+    dots: false,
     infinite: true,
+    variableWidth: true,
+    swipeToSlide: true,
+    swipe: true,
     lazyload: true,
-    // responsive: [],
-    slidesToShow: 4,
-    speed: 500,
+    speed: 300,
   }
   return (
     <Box className={classes.app}>
       <Header />
-      <Slider
-        {...sliderProps}
-      >
-        {experiences.map((experience, index) => {
-          return (
-            <Experience
-              key={index}
-              date={experience.date}
-              company={experience.company}
-              logo={experience.source}
-              job={experience.job}
-            />
-          )
-        })}
-      </Slider>
+      <Box mt={10}>
+        <Slider
+          {...sliderProps}
+        >
+          {experiences.map((experience, index) => {
+            return (
+              <Experience
+                key={index}
+                bgColor={experience.bgColor}
+                date={experience.date}
+                company={experience.company}
+                logo={experience.source}
+                job={experience.job}
+                stack={experience.stack}
+              />
+            )
+          })}
+        </Slider>
+      </Box>
       <Footer />
     </Box>
   )

@@ -1,5 +1,7 @@
 import AhliaLogo from './ahlia.png'
 import AirFranceLogo from './airfrance.png'
+import ChevronLeft from './chevronLeft.svg'
+import ChevronRight from './chevronRight.svg'
 import CloudeasierLogo from './cloudeasier.png'
 import ContactLogo from './contact.svg'
 import EnedisLogo from './enedis.png'
@@ -16,6 +18,8 @@ export {
   EnedisLogo,
   GithubLogo,
   LinkedinLogo,
+  ChevronLeft,
+  ChevronRight,
   ProfilePictureLogo,
   ContactLogo,
   EpitechLogo,

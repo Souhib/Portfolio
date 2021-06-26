@@ -5,11 +5,14 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 import { Box } from '@material-ui/core'
+import { createStyles, Theme } from '@material-ui/core/styles'
 import { makeStyles } from '@material-ui/core/styles'
 
 import { 
   KookaiLogo, 
-  CloudeasierLogo, 
+  CloudeasierLogo,
+  ChevronLeft,
+  ChevronRight,
   AirFranceLogo, 
   EnedisLogo, 
 } from 'assets/img'
@@ -19,14 +22,92 @@ import Footer from 'components/Layout/Footer/Footer'
 import Header from 'components/Layout/Header/Header'
 import { useWindowSize } from 'functions/useWindowSize'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme: Theme) => createStyles({
   app: {
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
     padding: '32px',
+    [theme.breakpoints.down('sm')]: {
+      padding: '8px',
+    },
   },
-})
+  slick: {
+    '&:hover .slick-prev, &:hover .slick-next': {
+      display: 'block !important',
+      [theme.breakpoints.down('sm')]: {
+        display: 'none !important'
+      },
+    },
+    '& .slick-prev': {
+      width: 48,
+      display: 'none !important',
+      height: '100%',
+      left: 0,
+      zIndex: 10,
+      transition: '0.8s',
+      borderTopLeftRadius: 8,
+      borderBottomLeftRadius: 8,
+      '&:hover': {
+        '&::before': {
+          width: 36,
+          height: 36
+        },
+        background: '#00000073',
+        transition: '0.8s'
+      },
+      '&::before': {
+        content: '\' \' !important',
+        backgroundSize: 'cover',
+        width: '32px',
+        margin: 'auto',
+        display: 'block',
+        backgroundImage: `url(${ChevronLeft})`,
+        height: '32px',
+        position: 'absolute',
+        left: 0,
+        transition: '0.8s',
+        bottom: 0,
+        top: 0
+      },
+      [theme.breakpoints.down('sm')]: {
+        display: 'none'
+      }
+    },
+    '& .slick-next': {
+      width: 48,
+      display: 'none !important',
+      height: '100%',
+      zIndex: 10,
+      transition: '0.8s',
+      borderTopRightRadius: 8,
+      borderBottomRightRadius: 8,
+      right: 0,
+      '&:hover': {
+        '&::before': {
+          width: 36,
+          height: 36
+        },
+        background: '#00000073',
+        transition: '0.8s'
+      },
+      '&::before': {
+        content: '\' \' !important',
+        backgroundSize: 'cover',
+        width: '32px',
+        margin: 'auto',
+        display: 'block',
+        backgroundImage: `url(${ChevronRight})`,
+        height: '32px',
+        transition: '0.8s',
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        right: 0,
+      },
+    },
+  }
+}))
 
 const experiences = [
   {
@@ -101,6 +182,7 @@ const Main: React.FunctionComponent = () => {
     dots: false,
     infinite: true,
     variableWidth: true,
+    className: classes.slick,
     swipeToSlide: true,
     swipe: true,
     lazyload: true,

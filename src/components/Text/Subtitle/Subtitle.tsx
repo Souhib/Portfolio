@@ -6,8 +6,10 @@ import useStyles from './styles'
 
 const Subtitle: React.FunctionComponent<SubtitleProps> = ({
   animation,
+  animationExit,
   animationDelay,
   children,
+  isHovering,
   textAlign = 'left',
   variant
 }) => {
@@ -19,10 +21,11 @@ const Subtitle: React.FunctionComponent<SubtitleProps> = ({
         classes.text,
         classes[variant], 
         classes.subtitle, 
-        animation && classes[animation]
+        animation && isHovering && classes[animation],
+        !isHovering && animationExit && classes[animationExit]
       ].join(' ')}
       style={{ 
-        animationDelay: animation && animationDelay ? animationDelay : undefined,
+        animationDelay: animation && animationDelay && isHovering ? animationDelay : undefined,
         textAlign: textAlign,
       }}
     >{children}</h5>

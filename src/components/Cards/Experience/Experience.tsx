@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 
-import { Box } from '@material-ui/core'
+import { Box, useMediaQuery, useTheme } from '@material-ui/core'
 
 import { ExperienceProps } from 'components/Cards/interfaces'
 import Stack from 'components/Containers/Stack/Stack'
@@ -19,7 +19,11 @@ const Experience = ({
   logo,
 }: ExperienceProps) => {
   const classes = useStyles()
+  const theme = useTheme()
   const [isHovered, setIsHovered] = useState(false)
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
+  const animation = isHovered ? 'biggerCard' : 'smallerCard'
   const containerStyle = {
     borderRadius: 8,
     border: `2px solid ${isHovered ? '#FFFFFF' : bgColor}`,
@@ -48,25 +52,32 @@ const Experience = ({
           verticalAlign='center'
           spacing={1}
         >
-          <Title variant='tiny'>{job}</Title>
+          <Title variant='small'>{job}</Title>
           <Title
             color='#C0C0C0'
-            variant='tiny'
+            variant='small'
           >{company}</Title>
         </Stack>
-        {isHovered && (
-          <>
+        {!isMobile && (
+          <Box
+            position='absolute'
+            style={{ bottom: 24 }}
+          >
             <Subtitle
               animation='slideIn'
+              animationExit='slideOut'
+              isHovering={isHovered}
               variant='tiny'
             >{date}</Subtitle>
-            <Subtitle
+            <Subtitle              
               animation='slideIn'
+              animationExit='slideOut'
               animationDelay='0.3s'
+              isHovering={isHovered}
               variant='tiny'
             >{stack}</Subtitle>
-          </>
-        )}          
+          </Box>
+        )}
       </Stack>
     </Box>
   )

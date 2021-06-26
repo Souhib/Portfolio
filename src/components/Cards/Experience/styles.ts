@@ -7,18 +7,16 @@ const useStyles = makeStyles((theme: Theme) =>
       height: 120,
       width: 240,
       padding: 24,
-      transition: '.5s',
+      transition: '1s',
       '&:hover': {
         height: 160,
         width: 260,
         cursor: 'pointer',
-        transition: '.5s',
-      },
-      '&:hover img': {
-        margin: '0 !important',
-        transition: '.5s',
+        transition: '1s',
       },
       [theme.breakpoints.down('sm')]: {
+        width: '180px !important',
+        height: '120px !important'
       },
     },
   }),

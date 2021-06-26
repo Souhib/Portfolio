@@ -6,34 +6,28 @@ import colors from '../../../theme/colors'
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     'huge': {
-      fontSize: 48,
+      fontSize: 40,
       textShadow: '0px 3Px 3px #0000002b',
       [theme.breakpoints.down('sm')]: {
         fontSize: 32
       },
     },
     'big': {
-      fontSize: 40,
+      fontSize: 32,
       [theme.breakpoints.down('sm')]: {
         fontSize: 24
       },
     },
     'medium': {
-      fontSize: 32,
+      fontSize: 24,
       [theme.breakpoints.down('sm')]: {
         fontSize: 16
       },
     },
     'small': {
-      fontSize: 24,
-      [theme.breakpoints.down('sm')]: {
-        fontSize: 12
-      },
-    },
-    'tiny': {
       fontSize: 16,
       [theme.breakpoints.down('sm')]: {
-        fontSize: 10
+        fontSize: 14
       },
     },
     'text': {

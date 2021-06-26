@@ -1,25 +1,41 @@
 import { makeStyles, createStyles } from '@material-ui/core/styles'
+import type { Theme } from '@material-ui/core/styles'
 
-const useStyles = makeStyles(() =>
+const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     huge: {
-      height: 88
+      height: 88,
+      [theme.breakpoints.down('sm')]: {
+        height: 72
+      }
     },
 
     big: {
-      height: 72
+      height: 72,
+      [theme.breakpoints.down('sm')]: {
+        height: 56
+      }
     },
 
     medium: {
-      height: 56
+      height: 56,
+      [theme.breakpoints.down('sm')]: {
+        height: 48
+      }
     },
 
     small: {
-      height: 48
+      height: 48,
+      [theme.breakpoints.down('sm')]: {
+        height: 40
+      }
     },
 
     tiny: {
-      height: 40
+      height: 40,
+      [theme.breakpoints.down('sm')]: {
+        height: 32
+      }
     },
 
     logo: {

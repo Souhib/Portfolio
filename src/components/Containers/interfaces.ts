@@ -14,3 +14,17 @@ export interface ClickableProps {
   children: ReactNode
   onClick(): void
 }
+
+// export interface ModalProps {
+//   children: ReactNode
+//   onClick(): void
+// }
+
+export interface ModalProps {
+  title: string
+  subtitle: string
+  location: string
+  date: string
+  image: string
+  text: string
+}

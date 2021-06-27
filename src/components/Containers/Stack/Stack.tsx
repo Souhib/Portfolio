@@ -1,8 +1,8 @@
-import React, { Children } from 'react'
+import React, { Children } from 'react';
 
-import Box from '@material-ui/core/Box'
+import Box from '@material-ui/core/Box';
 
-import { ContainerProps } from 'components/Containers/interfaces'
+import { ContainerProps } from 'components/Containers/interfaces';
 
 const Stack: React.FunctionComponent<ContainerProps> = ({
   bgColor,
@@ -17,26 +17,25 @@ const Stack: React.FunctionComponent<ContainerProps> = ({
     ? 'flex-start'
     : horizontalAlign === 'right' 
       ? 'flex-end' 
-      : horizontalAlign
+      : horizontalAlign;
   const vertical =
     verticalAlign === 'center'
       ? 'center'
       : verticalAlign === 'top'
         ? 'flex-start'
-        : 'flex-end'
-
+        : 'flex-end';
   const childrenMap = Children.map(children as React.ReactElement[], 
     (child, index) => {
       if (!child) {
-        return null
+        return null;
       }
-      const isLastItem = (children as React.ReactElement[]).length - 1 === index
+      const isLastItem = (children as React.ReactElement[]).length - 1 === index;
       return isRow ? 
         <Box 
           mr={isLastItem ? undefined : spacing}
         >{child}</Box> 
-        : <Box mb={isLastItem ? undefined : spacing}>{child}</Box>
-    })
+        : <Box mb={isLastItem ? undefined : spacing}>{child}</Box>;
+    });
   return (
     <Box
       bgcolor={bgColor}
@@ -48,7 +47,7 @@ const Stack: React.FunctionComponent<ContainerProps> = ({
     >
       {childrenMap}
     </Box>
-  )
-}
+  );
+};
 
-export default Stack
+export default Stack;

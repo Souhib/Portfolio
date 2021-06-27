@@ -39,6 +39,7 @@ module.exports = {
       1,
       { props: 'never', children: 'never' },
     ],
+    '@typescript-eslint/semi': ['warn', 'never'],
     // @TODO fix Prettier conflict & uncomment the below line
     // 'max-len': [
     //   'error',

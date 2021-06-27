@@ -17,6 +17,7 @@ import {
   EnedisLogo, 
 } from 'assets/img'
 import Experience from 'components/Cards/Experience/Experience'
+import Modal from 'components/Containers/Modal/Modal';
 import Stack from 'components/Containers/Stack/Stack'
 import Footer from 'components/Layout/Footer/Footer'
 import Header from 'components/Layout/Header/Header'
@@ -117,6 +118,25 @@ const experiences = [
     date: 'May - Jun 20',
     stack: 'CSS | JS | C++',
     source: EnedisLogo,
+    location: 'Paris - France',
+    text: `
+    ⇨ 𝑴𝑨 𝑴𝑰𝑺𝑺𝑰𝑶𝑵 : Modifier et ajouter des données sur un outil de monitoring constitué d'une carte et de plusieurs graphiques répertoriant toutes les données liées aux coupures électriques en France.
+
+    𝐃𝐨𝐦𝐚𝐢𝐧𝐞 𝐝'𝐢𝐧𝐭𝐞𝐫𝐯𝐞𝐧𝐭𝐢𝐨𝐧 :
+    ➤ Modification des labels constituants les graphiques (React, Chart JS).
+    ➤ Récupération des données nécessaires en base de données (Django, PGSQL).
+    ➤ Modification des graphiques afin d'avoir un rendu plus adapté aux besoins d'Enedis. (Chart JS).
+    ➤ Mise en place de tests unitaires Back-End (Pytest).
+    ➤ Mise en place de l'automatisation des tests Back-End (Jenkins).
+
+    𝐅𝐫𝐨𝐧𝐭-𝐄𝐧𝐝 : HTML, CSS, Javascript (React)
+    𝐁𝐚𝐜𝐤-𝐄𝐧𝐝 : Python, Django
+    𝐁𝐚𝐬𝐞 𝐝𝐞 𝐝𝐨𝐧𝐧𝐞𝐞 : PGSQL
+    𝐓𝐞𝐬𝐭𝐢𝐧𝐠 : Pytest
+    𝐃𝐞𝐯𝐎𝐩𝐬 : Jenkins
+    𝐎𝐫𝐠𝐚𝐧𝐢𝐬𝐚𝐭𝐢𝐨𝐧 : Trello
+    𝐕𝐞𝐫𝐬𝐢𝐨𝐧𝐧𝐢𝐧𝐠 : GIT
+    `
   },
   {
     job: 'Frontend Engineer',
@@ -125,6 +145,25 @@ const experiences = [
     stack: 'CSS | JS | C++',
     date: 'Jul - Sep 20',
     source: KookaiLogo,
+    location: 'Paris - France',
+    text: `
+    ⇨ 𝑴𝑨 𝑴𝑰𝑺𝑺𝑰𝑶𝑵 : Modifier et ajouter des données sur un outil de monitoring constitué d'une carte et de plusieurs graphiques répertoriant toutes les données liées aux coupures électriques en France.
+
+    𝐃𝐨𝐦𝐚𝐢𝐧𝐞 𝐝'𝐢𝐧𝐭𝐞𝐫𝐯𝐞𝐧𝐭𝐢𝐨𝐧 :
+    ➤ Modification des labels constituants les graphiques (React, Chart JS).
+    ➤ Récupération des données nécessaires en base de données (Django, PGSQL).
+    ➤ Modification des graphiques afin d'avoir un rendu plus adapté aux besoins d'Enedis. (Chart JS).
+    ➤ Mise en place de tests unitaires Back-End (Pytest).
+    ➤ Mise en place de l'automatisation des tests Back-End (Jenkins).
+
+    𝐅𝐫𝐨𝐧𝐭-𝐄𝐧𝐝 : HTML, CSS, Javascript (React)
+    𝐁𝐚𝐜𝐤-𝐄𝐧𝐝 : Python, Django
+    𝐁𝐚𝐬𝐞 𝐝𝐞 𝐝𝐨𝐧𝐧𝐞𝐞 : PGSQL
+    𝐓𝐞𝐬𝐭𝐢𝐧𝐠 : Pytest
+    𝐃𝐞𝐯𝐎𝐩𝐬 : Jenkins
+    𝐎𝐫𝐠𝐚𝐧𝐢𝐬𝐚𝐭𝐢𝐨𝐧 : Trello
+    𝐕𝐞𝐫𝐬𝐢𝐨𝐧𝐧𝐢𝐧𝐠 : GIT
+    `
   },
   {
     job: 'Lead tech integration',
@@ -132,7 +171,26 @@ const experiences = [
     stack: 'CSS | JS | C++',
     company: 'Air France',
     date: 'Oct 20 - Jan 21',
-    source: AirFranceLogo
+    source: AirFranceLogo,
+    location: 'Paris - France',
+    text: `
+    ⇨ 𝑴𝑨 𝑴𝑰𝑺𝑺𝑰𝑶𝑵 : Modifier et ajouter des données sur un outil de monitoring constitué d'une carte et de plusieurs graphiques répertoriant toutes les données liées aux coupures électriques en France.
+
+    𝐃𝐨𝐦𝐚𝐢𝐧𝐞 𝐝'𝐢𝐧𝐭𝐞𝐫𝐯𝐞𝐧𝐭𝐢𝐨𝐧 :
+    ➤ Modification des labels constituants les graphiques (React, Chart JS).
+    ➤ Récupération des données nécessaires en base de données (Django, PGSQL).
+    ➤ Modification des graphiques afin d'avoir un rendu plus adapté aux besoins d'Enedis. (Chart JS).
+    ➤ Mise en place de tests unitaires Back-End (Pytest).
+    ➤ Mise en place de l'automatisation des tests Back-End (Jenkins).
+
+    𝐅𝐫𝐨𝐧𝐭-𝐄𝐧𝐝 : HTML, CSS, Javascript (React)
+    𝐁𝐚𝐜𝐤-𝐄𝐧𝐝 : Python, Django
+    𝐁𝐚𝐬𝐞 𝐝𝐞 𝐝𝐨𝐧𝐧𝐞𝐞 : PGSQL
+    𝐓𝐞𝐬𝐭𝐢𝐧𝐠 : Pytest
+    𝐃𝐞𝐯𝐎𝐩𝐬 : Jenkins
+    𝐎𝐫𝐠𝐚𝐧𝐢𝐬𝐚𝐭𝐢𝐨𝐧 : Trello
+    𝐕𝐞𝐫𝐬𝐢𝐨𝐧𝐧𝐢𝐧𝐠 : GIT
+    `
   },
   {
     job: 'Backend Engineer',
@@ -140,7 +198,26 @@ const experiences = [
     stack: 'CSS | JS | C++',
     date: 'Feb 20 - May 21',
     company: 'Cloudeasieer',
-    source: CloudeasierLogo
+    source: CloudeasierLogo,
+    location: 'Paris - France',
+    text: `
+    ⇨ 𝑴𝑨 𝑴𝑰𝑺𝑺𝑰𝑶𝑵 : Modifier et ajouter des données sur un outil de monitoring constitué d'une carte et de plusieurs graphiques répertoriant toutes les données liées aux coupures électriques en France.
+
+    𝐃𝐨𝐦𝐚𝐢𝐧𝐞 𝐝'𝐢𝐧𝐭𝐞𝐫𝐯𝐞𝐧𝐭𝐢𝐨𝐧 :
+    ➤ Modification des labels constituants les graphiques (React, Chart JS).
+    ➤ Récupération des données nécessaires en base de données (Django, PGSQL).
+    ➤ Modification des graphiques afin d'avoir un rendu plus adapté aux besoins d'Enedis. (Chart JS).
+    ➤ Mise en place de tests unitaires Back-End (Pytest).
+    ➤ Mise en place de l'automatisation des tests Back-End (Jenkins).
+
+    𝐅𝐫𝐨𝐧𝐭-𝐄𝐧𝐝 : HTML, CSS, Javascript (React)
+    𝐁𝐚𝐜𝐤-𝐄𝐧𝐝 : Python, Django
+    𝐁𝐚𝐬𝐞 𝐝𝐞 𝐝𝐨𝐧𝐧𝐞𝐞 : PGSQL
+    𝐓𝐞𝐬𝐭𝐢𝐧𝐠 : Pytest
+    𝐃𝐞𝐯𝐎𝐩𝐬 : Jenkins
+    𝐎𝐫𝐠𝐚𝐧𝐢𝐬𝐚𝐭𝐢𝐨𝐧 : Trello
+    𝐕𝐞𝐫𝐬𝐢𝐨𝐧𝐧𝐢𝐧𝐠 : GIT
+    `
   },
   {
     job: 'Frontend Engineer',
@@ -149,6 +226,25 @@ const experiences = [
     company: 'Enedis',
     date: 'May - Jun 20',
     source: EnedisLogo,
+    location: 'Paris - France',
+    text: `
+    ⇨ 𝑴𝑨 𝑴𝑰𝑺𝑺𝑰𝑶𝑵 : Modifier et ajouter des données sur un outil de monitoring constitué d'une carte et de plusieurs graphiques répertoriant toutes les données liées aux coupures électriques en France.
+
+    𝐃𝐨𝐦𝐚𝐢𝐧𝐞 𝐝'𝐢𝐧𝐭𝐞𝐫𝐯𝐞𝐧𝐭𝐢𝐨𝐧 :
+    ➤ Modification des labels constituants les graphiques (React, Chart JS).
+    ➤ Récupération des données nécessaires en base de données (Django, PGSQL).
+    ➤ Modification des graphiques afin d'avoir un rendu plus adapté aux besoins d'Enedis. (Chart JS).
+    ➤ Mise en place de tests unitaires Back-End (Pytest).
+    ➤ Mise en place de l'automatisation des tests Back-End (Jenkins).
+
+    𝐅𝐫𝐨𝐧𝐭-𝐄𝐧𝐝 : HTML, CSS, Javascript (React)
+    𝐁𝐚𝐜𝐤-𝐄𝐧𝐝 : Python, Django
+    𝐁𝐚𝐬𝐞 𝐝𝐞 𝐝𝐨𝐧𝐧𝐞𝐞 : PGSQL
+    𝐓𝐞𝐬𝐭𝐢𝐧𝐠 : Pytest
+    𝐃𝐞𝐯𝐎𝐩𝐬 : Jenkins
+    𝐎𝐫𝐠𝐚𝐧𝐢𝐬𝐚𝐭𝐢𝐨𝐧 : Trello
+    𝐕𝐞𝐫𝐬𝐢𝐨𝐧𝐧𝐢𝐧𝐠 : GIT
+    `
   },
   {
     job: 'Frontend Engineer',
@@ -157,6 +253,25 @@ const experiences = [
     stack: 'CSS | JS | C++',
     date: 'Jul - Sep 20',
     source: KookaiLogo,
+    location: 'Paris - France',
+    text: `
+    ⇨ 𝑴𝑨 𝑴𝑰𝑺𝑺𝑰𝑶𝑵 : Modifier et ajouter des données sur un outil de monitoring constitué d'une carte et de plusieurs graphiques répertoriant toutes les données liées aux coupures électriques en France.
+
+    𝐃𝐨𝐦𝐚𝐢𝐧𝐞 𝐝'𝐢𝐧𝐭𝐞𝐫𝐯𝐞𝐧𝐭𝐢𝐨𝐧 :
+    ➤ Modification des labels constituants les graphiques (React, Chart JS).
+    ➤ Récupération des données nécessaires en base de données (Django, PGSQL).
+    ➤ Modification des graphiques afin d'avoir un rendu plus adapté aux besoins d'Enedis. (Chart JS).
+    ➤ Mise en place de tests unitaires Back-End (Pytest).
+    ➤ Mise en place de l'automatisation des tests Back-End (Jenkins).
+
+    𝐅𝐫𝐨𝐧𝐭-𝐄𝐧𝐝 : HTML, CSS, Javascript (React)
+    𝐁𝐚𝐜𝐤-𝐄𝐧𝐝 : Python, Django
+    𝐁𝐚𝐬𝐞 𝐝𝐞 𝐝𝐨𝐧𝐧𝐞𝐞 : PGSQL
+    𝐓𝐞𝐬𝐭𝐢𝐧𝐠 : Pytest
+    𝐃𝐞𝐯𝐎𝐩𝐬 : Jenkins
+    𝐎𝐫𝐠𝐚𝐧𝐢𝐬𝐚𝐭𝐢𝐨𝐧 : Trello
+    𝐕𝐞𝐫𝐬𝐢𝐨𝐧𝐧𝐢𝐧𝐠 : GIT
+    `
   },
   {
     job: 'Lead tech integration',
@@ -164,7 +279,26 @@ const experiences = [
     bgColor: '#000E23',
     company: 'Air France',
     date: 'Oct 20 - Jan 21',
-    source: AirFranceLogo
+    source: AirFranceLogo,
+    location: 'Paris - France',
+    text: `
+    ⇨ 𝑴𝑨 𝑴𝑰𝑺𝑺𝑰𝑶𝑵 : Modifier et ajouter des données sur un outil de monitoring constitué d'une carte et de plusieurs graphiques répertoriant toutes les données liées aux coupures électriques en France.
+
+    𝐃𝐨𝐦𝐚𝐢𝐧𝐞 𝐝'𝐢𝐧𝐭𝐞𝐫𝐯𝐞𝐧𝐭𝐢𝐨𝐧 :
+    ➤ Modification des labels constituants les graphiques (React, Chart JS).
+    ➤ Récupération des données nécessaires en base de données (Django, PGSQL).
+    ➤ Modification des graphiques afin d'avoir un rendu plus adapté aux besoins d'Enedis. (Chart JS).
+    ➤ Mise en place de tests unitaires Back-End (Pytest).
+    ➤ Mise en place de l'automatisation des tests Back-End (Jenkins).
+
+    𝐅𝐫𝐨𝐧𝐭-𝐄𝐧𝐝 : HTML, CSS, Javascript (React)
+    𝐁𝐚𝐜𝐤-𝐄𝐧𝐝 : Python, Django
+    𝐁𝐚𝐬𝐞 𝐝𝐞 𝐝𝐨𝐧𝐧𝐞𝐞 : PGSQL
+    𝐓𝐞𝐬𝐭𝐢𝐧𝐠 : Pytest
+    𝐃𝐞𝐯𝐎𝐩𝐬 : Jenkins
+    𝐎𝐫𝐠𝐚𝐧𝐢𝐬𝐚𝐭𝐢𝐨𝐧 : Trello
+    𝐕𝐞𝐫𝐬𝐢𝐨𝐧𝐧𝐢𝐧𝐠 : GIT
+    `
   },
   {
     job: 'Backend Engineer',
@@ -172,7 +306,26 @@ const experiences = [
     bgColor: '#42004A',
     date: 'Feb 20 - May 21',
     company: 'Cloudeasieer',
-    source: CloudeasierLogo
+    source: CloudeasierLogo,
+    location: 'Paris - France',
+    text: `
+    ⇨ 𝑴𝑨 𝑴𝑰𝑺𝑺𝑰𝑶𝑵 : Modifier et ajouter des données sur un outil de monitoring constitué d'une carte et de plusieurs graphiques répertoriant toutes les données liées aux coupures électriques en France.
+
+    𝐃𝐨𝐦𝐚𝐢𝐧𝐞 𝐝'𝐢𝐧𝐭𝐞𝐫𝐯𝐞𝐧𝐭𝐢𝐨𝐧 :
+    ➤ Modification des labels constituants les graphiques (React, Chart JS).
+    ➤ Récupération des données nécessaires en base de données (Django, PGSQL).
+    ➤ Modification des graphiques afin d'avoir un rendu plus adapté aux besoins d'Enedis. (Chart JS).
+    ➤ Mise en place de tests unitaires Back-End (Pytest).
+    ➤ Mise en place de l'automatisation des tests Back-End (Jenkins).
+
+    𝐅𝐫𝐨𝐧𝐭-𝐄𝐧𝐝 : HTML, CSS, Javascript (React)
+    𝐁𝐚𝐜𝐤-𝐄𝐧𝐝 : Python, Django
+    𝐁𝐚𝐬𝐞 𝐝𝐞 𝐝𝐨𝐧𝐧𝐞𝐞 : PGSQL
+    𝐓𝐞𝐬𝐭𝐢𝐧𝐠 : Pytest
+    𝐃𝐞𝐯𝐎𝐩𝐬 : Jenkins
+    𝐎𝐫𝐠𝐚𝐧𝐢𝐬𝐚𝐭𝐢𝐨𝐧 : Trello
+    𝐕𝐞𝐫𝐬𝐢𝐨𝐧𝐧𝐢𝐧𝐠 : GIT
+    `
   },
 ]
 
@@ -210,6 +363,35 @@ const Main: React.FunctionComponent = () => {
           })}
         </Slider>
       </Box>
+      <Stack>
+        <Modal
+          title={experiences[0].job}
+          subtitle={experiences[0].company}
+          location={experiences[0].location}
+          date={experiences[0].date}
+          image={experiences[0].source}
+          text={experiences[0].text}
+        />
+        {/* <div style={{whiteSpace: 'pre-line'}}>
+          {experiences[0].job}
+          {experiences[0].bgColor}
+          {experiences[0].date}
+          {experiences[0].source}
+          {experiences[0].stack}
+          {experiences[0].company}
+          {experiences[0].job}
+          {experiences[0].text}
+        </div> */}
+      </Stack>
+      {/* <Modal
+        title='test'
+        subtitle='test'
+        location='test'
+        date='test'
+        image='test'
+        text='test'
+      /> */}
+      {/* <Stack /> */}
       <Footer />
     </Box>
   )

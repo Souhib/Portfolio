@@ -38,6 +38,6 @@ const useStyles = makeStyles(() =>
       border: '2px solid #FFFFFF',
     }
   }),
-);
+)
 
 export default useStyles

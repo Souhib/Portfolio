@@ -3,8 +3,8 @@ import React from 'react'
 export interface TitleProps {
   color?: string
   children: React.ReactNode
-  variant: 'huge' | 'big' | 'medium' | 'small'
-  textAlign?: 'left' | 'center' | 'right'
+  variant: 'huge' | 'big' | 'medium' | 'small'
+  textAlign?: 'left' | 'center' | 'right'
 }
 
 export interface SubtitleProps {
@@ -13,12 +13,12 @@ export interface SubtitleProps {
   animationDelay?: string
   children: React.ReactNode
   isHovering?: boolean
-  variant: 'big' | 'medium' | 'small' | 'tiny'
-  textAlign?: 'left' | 'center' | 'right'
+  variant: 'big' | 'medium' | 'small' | 'tiny'
+  textAlign?: 'left' | 'center' | 'right'
 }
 
 export interface BodyProps {
   children: React.ReactNode
-  variant: 'big' | 'medium' | 'small'
-  textAlign?: 'left' | 'center' | 'right'
+  variant: 'huge' | 'big' | 'medium' | 'small'
+  textAlign?: 'left' | 'center' | 'right'
 }

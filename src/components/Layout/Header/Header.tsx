@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { useTheme } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { useTheme } from '@material-ui/core/styles'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 import { 
   ProfilePictureLogo, 
@@ -23,7 +23,7 @@ const data = {
 }
 
 const Header: React.FunctionComponent = () => {
-  const theme = useTheme();
+  const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
   const responsiveHorizontal = isMobile ? 'center' : 'left'
   const goToLinkedin = () => window.open(data.socials.linkedin, '_blank')

@@ -4,6 +4,7 @@ import ChevronLeft from './chevronLeft.svg'
 import ChevronRight from './chevronRight.svg'
 import CloudeasierLogo from './cloudeasier.png'
 import ContactLogo from './contact.svg'
+import Cross from './cross.svg'
 import EnedisLogo from './enedis.png'
 import EpitechLogo from './epitech.png'
 import GithubLogo from './github.svg'
@@ -15,19 +16,20 @@ import ProfilePictureLogo from './profile_picture.png'
 import SFUniLogo from './sfuni.png'
 
 export {
-  EnedisLogo,
-  GithubLogo,
-  LinkedinLogo,
-  ChevronLeft,
-  ChevronRight,
-  ProfilePictureLogo,
-  ContactLogo,
-  EpitechLogo,
   AhliaLogo,
   AirFranceLogo,
+  ChevronLeft,
+  ChevronRight,
   CloudeasierLogo,
+  ContactLogo,
+  Cross,
+  EnedisLogo,
+  EpitechLogo,
+  GithubLogo,
   KookaiLogo,
-  SNKLogo,
+  LinkedinLogo,
   MangasLogo,
+  ProfilePictureLogo,
   SFUniLogo,
+  SNKLogo,
 }

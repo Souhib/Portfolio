@@ -1,65 +1,117 @@
-import React, { useRef } from 'react';
+import React, { useRef } from 'react'
 
-import { Modal as ModalMUI } from '@material-ui/core';
-import Box from '@material-ui/core/Box';
-import Divider from '@material-ui/core/Divider';
+import { Box, Modal as ModalMUI, useMediaQuery, useTheme } from '@material-ui/core'
 
-import { ModalProps } from 'components/Containers/interfaces';
-import Stack from 'components/Containers/Stack/Stack';
-import Body from 'components/Text/Body/Body';
-import Subtitle from 'components/Text/Subtitle/Subtitle';
-import Title from 'components/Text/Title/Title';
+import { Cross } from 'assets/img'
+import { ModalProps } from 'components/Containers/interfaces'
+import Stack from 'components/Containers/Stack/Stack'
+import Logo from 'components/Images/Logo/Logo'
+import Body from 'components/Text/Body/Body'
+import Subtitle from 'components/Text/Subtitle/Subtitle'
+import Title from 'components/Text/Title/Title'
 
-import useStyles from './styles';
+import useStyles from './styles'
 
 const Modal: React.FunctionComponent<ModalProps> = ({
   title,
   subtitle,
   location,
   date,
+  onClose,
+  open,
+  color,
   image,
   text
 }) => {
 
-  const classes = useStyles();
-
-  const rootRef = useRef<HTMLDivElement>(null);
-
-
+  const classes = useStyles()
+  const rootRef = useRef<HTMLDivElement>(null)
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+  
   return (
-    <div ref={rootRef}>
+    <div
+      ref={rootRef}
+    >
       <ModalMUI
-        disablePortal
-        disableEnforceFocus
-        disableAutoFocus
-        open
+        open={open || false}
+        onClose={onClose}
         aria-labelledby='server-modal-title'
         aria-describedby='server-modal-description'
-        className={classes.modal}
+        className={classes.modal}     
+        style={{ 
+          backgroundColor: color
+        }}
+
         container={() => rootRef.current}
       >
         <>
           <Stack
-            horizontalAlign='center'
-            verticalAlign='center'
-            spacing={4}
+            className={classes.mainStack}
+            horizontalAlign='space-between'
           >
-            <Title variant='huge'>{title}</Title>
-            <Divider />
-            <Title variant='medium'>{subtitle}</Title>
-            <Body
-            // className={classes.linebreak}
-              variant='big'
-            >{text}</Body> 
+            <Stack
+              horizontalAlign='center'
+              verticalAlign='center'
+              spacing={isMobile ? 3 : 4}
+            >
+              <Title
+                textAlign={isMobile ? 'center' : 'left'}
+                variant='huge'
+              >{title}</Title>
+              <Box className={classes.divider}  />
+              <Title variant='medium'>{subtitle}</Title>
+            </Stack>
+            <Box className={classes.linebreak}>
+              <Box 
+                className={classes.description}
+              >
+                <Body
+                  variant='big'
+                >{text}</Body> 
+              </Box>
+            </Box>
+            <Stack
+              isRow={!isMobile}
+              className={classes.bottomBar}
+              verticalAlign='center'
+            >
+              <Stack
+                horizontalAlign='center'
+                className={classes.modalBottomItem}
+                verticalAlign='center'
+              >
+                <Subtitle
+                  textAlign={isMobile ? 'center' : 'left'}
+                  variant='big'
+                >{location}</Subtitle>
+                <Subtitle
+                  textAlign={isMobile ? 'center' : 'left'}
+                  variant='medium'
+                >{date}</Subtitle>
+              </Stack>
+              <Stack
+                className={classes.modalBottomItem}
+              >
+                <Logo
+                  logo={image}
+                  variant={isMobile ? 'tiny' : 'medium'}
+                />
+              </Stack>
+            </Stack>
           </Stack>
-          <Subtitle variant='big'>{location}</Subtitle>
-          <Subtitle variant='medium'>{date}</Subtitle>
-          <p>{image}</p>
-          <div className={classes.linebreak} />
+          <Box
+            className={classes.cross}
+            onClick={onClose}
+          >
+            <img
+              src={Cross}
+            />
+          </Box>
         </>
       </ModalMUI>
     </div>
-  );
-};
+  )
+}
 
-export default Modal;
+export default Modal

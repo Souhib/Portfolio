@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
@@ -14,14 +14,14 @@ import {
   ChevronLeft,
   ChevronRight,
   AirFranceLogo, 
-  EnedisLogo, 
+  EnedisLogo,
 } from 'assets/img'
 import Experience from 'components/Cards/Experience/Experience'
-import Modal from 'components/Containers/Modal/Modal';
+import Clickable from 'components/Containers/Clickable/Clickable'
+import Modal from 'components/Containers/Modal/Modal'
 import Stack from 'components/Containers/Stack/Stack'
 import Footer from 'components/Layout/Footer/Footer'
 import Header from 'components/Layout/Header/Header'
-import { useWindowSize } from 'functions/useWindowSize'
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
   app: {
@@ -119,9 +119,8 @@ const experiences = [
     stack: 'CSS | JS | C++',
     source: EnedisLogo,
     location: 'Paris - France',
-    text: `
-    ⇨ 𝑴𝑨 𝑴𝑰𝑺𝑺𝑰𝑶𝑵 : Modifier et ajouter des données sur un outil de monitoring constitué d'une carte et de plusieurs graphiques répertoriant toutes les données liées aux coupures électriques en France.
-
+    text: `⇨ 𝑴𝑨 𝑴𝑰𝑺𝑺𝑰𝑶𝑵 : Modifier et ajouter des données sur un outil de monitoring constitué d'une carte et de plusieurs graphiques répertoriant toutes les données liées aux coupures électriques en France.
+    
     𝐃𝐨𝐦𝐚𝐢𝐧𝐞 𝐝'𝐢𝐧𝐭𝐞𝐫𝐯𝐞𝐧𝐭𝐢𝐨𝐧 :
     ➤ Modification des labels constituants les graphiques (React, Chart JS).
     ➤ Récupération des données nécessaires en base de données (Django, PGSQL).
@@ -146,8 +145,7 @@ const experiences = [
     date: 'Jul - Sep 20',
     source: KookaiLogo,
     location: 'Paris - France',
-    text: `
-    ⇨ 𝑴𝑨 𝑴𝑰𝑺𝑺𝑰𝑶𝑵 : Modifier et ajouter des données sur un outil de monitoring constitué d'une carte et de plusieurs graphiques répertoriant toutes les données liées aux coupures électriques en France.
+    text: `⇨ 𝑴𝑨 𝑴𝑰𝑺𝑺𝑰𝑶𝑵 : Modifier et ajouter des données sur un outil de monitoring constitué d'une carte et de plusieurs graphiques répertoriant toutes les données liées aux coupures électriques en France.
 
     𝐃𝐨𝐦𝐚𝐢𝐧𝐞 𝐝'𝐢𝐧𝐭𝐞𝐫𝐯𝐞𝐧𝐭𝐢𝐨𝐧 :
     ➤ Modification des labels constituants les graphiques (React, Chart JS).
@@ -173,8 +171,7 @@ const experiences = [
     date: 'Oct 20 - Jan 21',
     source: AirFranceLogo,
     location: 'Paris - France',
-    text: `
-    ⇨ 𝑴𝑨 𝑴𝑰𝑺𝑺𝑰𝑶𝑵 : Modifier et ajouter des données sur un outil de monitoring constitué d'une carte et de plusieurs graphiques répertoriant toutes les données liées aux coupures électriques en France.
+    text: `⇨ 𝑴𝑨 𝑴𝑰𝑺𝑺𝑰𝑶𝑵 : Modifier et ajouter des données sur un outil de monitoring constitué d'une carte et de plusieurs graphiques répertoriant toutes les données liées aux coupures électriques en France.
 
     𝐃𝐨𝐦𝐚𝐢𝐧𝐞 𝐝'𝐢𝐧𝐭𝐞𝐫𝐯𝐞𝐧𝐭𝐢𝐨𝐧 :
     ➤ Modification des labels constituants les graphiques (React, Chart JS).
@@ -200,8 +197,7 @@ const experiences = [
     company: 'Cloudeasieer',
     source: CloudeasierLogo,
     location: 'Paris - France',
-    text: `
-    ⇨ 𝑴𝑨 𝑴𝑰𝑺𝑺𝑰𝑶𝑵 : Modifier et ajouter des données sur un outil de monitoring constitué d'une carte et de plusieurs graphiques répertoriant toutes les données liées aux coupures électriques en France.
+    text: `⇨ 𝑴𝑨 𝑴𝑰𝑺𝑺𝑰𝑶𝑵 : Modifier et ajouter des données sur un outil de monitoring constitué d'une carte et de plusieurs graphiques répertoriant toutes les données liées aux coupures électriques en France.
 
     𝐃𝐨𝐦𝐚𝐢𝐧𝐞 𝐝'𝐢𝐧𝐭𝐞𝐫𝐯𝐞𝐧𝐭𝐢𝐨𝐧 :
     ➤ Modification des labels constituants les graphiques (React, Chart JS).
@@ -227,8 +223,7 @@ const experiences = [
     date: 'May - Jun 20',
     source: EnedisLogo,
     location: 'Paris - France',
-    text: `
-    ⇨ 𝑴𝑨 𝑴𝑰𝑺𝑺𝑰𝑶𝑵 : Modifier et ajouter des données sur un outil de monitoring constitué d'une carte et de plusieurs graphiques répertoriant toutes les données liées aux coupures électriques en France.
+    text: ` ⇨ 𝑴𝑨 𝑴𝑰𝑺𝑺𝑰𝑶𝑵 : Modifier et ajouter des données sur un outil de monitoring constitué d'une carte et de plusieurs graphiques répertoriant toutes les données liées aux coupures électriques en France.
 
     𝐃𝐨𝐦𝐚𝐢𝐧𝐞 𝐝'𝐢𝐧𝐭𝐞𝐫𝐯𝐞𝐧𝐭𝐢𝐨𝐧 :
     ➤ Modification des labels constituants les graphiques (React, Chart JS).
@@ -254,8 +249,7 @@ const experiences = [
     date: 'Jul - Sep 20',
     source: KookaiLogo,
     location: 'Paris - France',
-    text: `
-    ⇨ 𝑴𝑨 𝑴𝑰𝑺𝑺𝑰𝑶𝑵 : Modifier et ajouter des données sur un outil de monitoring constitué d'une carte et de plusieurs graphiques répertoriant toutes les données liées aux coupures électriques en France.
+    text: `⇨ 𝑴𝑨 𝑴𝑰𝑺𝑺𝑰𝑶𝑵 : Modifier et ajouter des données sur un outil de monitoring constitué d'une carte et de plusieurs graphiques répertoriant toutes les données liées aux coupures électriques en France.
 
     𝐃𝐨𝐦𝐚𝐢𝐧𝐞 𝐝'𝐢𝐧𝐭𝐞𝐫𝐯𝐞𝐧𝐭𝐢𝐨𝐧 :
     ➤ Modification des labels constituants les graphiques (React, Chart JS).
@@ -281,8 +275,7 @@ const experiences = [
     date: 'Oct 20 - Jan 21',
     source: AirFranceLogo,
     location: 'Paris - France',
-    text: `
-    ⇨ 𝑴𝑨 𝑴𝑰𝑺𝑺𝑰𝑶𝑵 : Modifier et ajouter des données sur un outil de monitoring constitué d'une carte et de plusieurs graphiques répertoriant toutes les données liées aux coupures électriques en France.
+    text: `⇨ 𝑴𝑨 𝑴𝑰𝑺𝑺𝑰𝑶𝑵 : Modifier et ajouter des données sur un outil de monitoring constitué d'une carte et de plusieurs graphiques répertoriant toutes les données liées aux coupures électriques en France.
 
     𝐃𝐨𝐦𝐚𝐢𝐧𝐞 𝐝'𝐢𝐧𝐭𝐞𝐫𝐯𝐞𝐧𝐭𝐢𝐨𝐧 :
     ➤ Modification des labels constituants les graphiques (React, Chart JS).
@@ -308,8 +301,7 @@ const experiences = [
     company: 'Cloudeasieer',
     source: CloudeasierLogo,
     location: 'Paris - France',
-    text: `
-    ⇨ 𝑴𝑨 𝑴𝑰𝑺𝑺𝑰𝑶𝑵 : Modifier et ajouter des données sur un outil de monitoring constitué d'une carte et de plusieurs graphiques répertoriant toutes les données liées aux coupures électriques en France.
+    text: `⇨ 𝑴𝑨 𝑴𝑰𝑺𝑺𝑰𝑶𝑵 : Modifier et ajouter des données sur un outil de monitoring constitué d'une carte et de plusieurs graphiques répertoriant toutes les données liées aux coupures électriques en France.
 
     𝐃𝐨𝐦𝐚𝐢𝐧𝐞 𝐝'𝐢𝐧𝐭𝐞𝐫𝐯𝐞𝐧𝐭𝐢𝐨𝐧 :
     ➤ Modification des labels constituants les graphiques (React, Chart JS).
@@ -329,6 +321,17 @@ const experiences = [
   },
 ]
 
+export interface ExperienceType {
+  job: string
+  stack: string
+  bgColor: string
+  date: string
+  company: string
+  source: string
+  location: string
+  text: string
+}
+
 const Main: React.FunctionComponent = () => {
   const classes = useStyles()
   const sliderProps = {
@@ -341,6 +344,8 @@ const Main: React.FunctionComponent = () => {
     lazyload: true,
     speed: 300,
   }
+  const [modalData, setModalData] = useState<ExperienceType | undefined>(undefined)
+
   return (
     <Box className={classes.app}>
       <Header />
@@ -350,48 +355,36 @@ const Main: React.FunctionComponent = () => {
         >
           {experiences.map((experience, index) => {
             return (
-              <Experience
+              <Clickable
                 key={index}
-                bgColor={experience.bgColor}
-                date={experience.date}
-                company={experience.company}
-                logo={experience.source}
-                job={experience.job}
-                stack={experience.stack}
-              />
+                onClick={() => setModalData(experience)}
+              >
+                <Experience
+                  bgColor={experience.bgColor}
+                  date={experience.date}
+                  company={experience.company}
+                  logo={experience.source}
+                  job={experience.job}
+                  stack={experience.stack}
+                />
+              </Clickable>
             )
           })}
         </Slider>
       </Box>
       <Stack>
         <Modal
-          title={experiences[0].job}
-          subtitle={experiences[0].company}
-          location={experiences[0].location}
-          date={experiences[0].date}
-          image={experiences[0].source}
-          text={experiences[0].text}
+          open={!!modalData}
+          title={modalData?.job}
+          subtitle={modalData?.company}
+          onClose={() => setModalData(undefined)}
+          location={modalData?.location}
+          date={modalData?.date}
+          color={modalData?.bgColor}
+          image={modalData?.source}
+          text={modalData?.text}
         />
-        {/* <div style={{whiteSpace: 'pre-line'}}>
-          {experiences[0].job}
-          {experiences[0].bgColor}
-          {experiences[0].date}
-          {experiences[0].source}
-          {experiences[0].stack}
-          {experiences[0].company}
-          {experiences[0].job}
-          {experiences[0].text}
-        </div> */}
       </Stack>
-      {/* <Modal
-        title='test'
-        subtitle='test'
-        location='test'
-        date='test'
-        image='test'
-        text='test'
-      /> */}
-      {/* <Stack /> */}
       <Footer />
     </Box>
   )

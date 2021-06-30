@@ -21,7 +21,7 @@ const data = {
 
 const Footer: React.FunctionComponent = () => {
 
-  const theme = useTheme();
+  const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
   const mailTo = () => window.open(data.socials.mail, '_blank')
   const goToLinkedin = () => window.open(data.socials.linkedin, '_blank')

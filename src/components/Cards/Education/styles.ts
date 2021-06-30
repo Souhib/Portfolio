@@ -19,6 +19,6 @@ const useStyles = makeStyles((theme: Theme) =>
       marginTop: 'auto',
     }
   }),
-);
+)
 
 export default useStyles

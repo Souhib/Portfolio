@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
+import { ReactNode } from 'react'
 
 export interface ContainerProps {
   bgColor?: string | undefined
   children: ReactNode
-  className?: string | undefined
+  className?: string | undefined
   horizontalAlign?: 'left' | 'center' | 'right' | 'space-between'
   isRow?: boolean
   spacing?: number
@@ -21,10 +21,13 @@ export interface ClickableProps {
 // }
 
 export interface ModalProps {
-  title: string
-  subtitle: string
-  location: string
-  date: string
-  image: string
-  text: string
+  title?: string
+  open?: boolean
+  subtitle?: string
+  onClose?(): void
+  location?: string
+  date?: string
+  color?: string
+  image?: string
+  text?: string
 }

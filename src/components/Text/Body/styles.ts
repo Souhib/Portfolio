@@ -6,8 +6,14 @@ import colors from '../../../theme/colors'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    'big': {
+    'huge': {
       fontSize: 24,
+      [theme.breakpoints.down('sm')]: {
+        fontSize: 20
+      },
+    },
+    'big': {
+      fontSize: 20,
       [theme.breakpoints.down('sm')]: {
         fontSize: 16
       },
@@ -29,6 +35,6 @@ const useStyles = makeStyles((theme: Theme) =>
       fontFamily: 'Manrope, sans'
     },
   }),
-);
+)
 
 export default useStyles

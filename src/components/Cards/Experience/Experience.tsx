@@ -21,7 +21,7 @@ const Experience = ({
   const classes = useStyles()
   const theme = useTheme()
   const [isHovered, setIsHovered] = useState(false)
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
 
   const animation = isHovered ? 'biggerCard' : 'smallerCard'
   const containerStyle = {

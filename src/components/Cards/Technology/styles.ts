@@ -27,6 +27,6 @@ const useStyles = makeStyles((theme: Theme) =>
       right: 16
     },
   }),
-);
+)
 
 export default useStyles

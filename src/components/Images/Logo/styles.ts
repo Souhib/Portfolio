@@ -43,6 +43,6 @@ const useStyles = makeStyles((theme: Theme) =>
       textAlign: 'center',
     },
   }),
-);
+)
 
 export default useStyles

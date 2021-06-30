@@ -37,6 +37,6 @@ const useStyles = makeStyles((theme: Theme) =>
       fontFamily: 'Poppins, sans'
     },
   }),
-);
+)
 
 export default useStyles

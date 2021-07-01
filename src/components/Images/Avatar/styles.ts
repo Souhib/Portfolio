@@ -22,6 +22,13 @@ const useStyles = makeStyles(() =>
       width: '40px',
       height: '40px',
     },
+    animatedAvatar: {
+      transition: '.5s',
+      '&:hover': {
+        transform: 'scale(1.1)',
+        transition: '.5s',
+      }
+    },
     imageContainer: {
       overflow: 'hidden',
       lineHeight: 0,
@@ -31,6 +38,6 @@ const useStyles = makeStyles(() =>
       border: '2px solid #FFFFFF',
     }
   }),
-);
+)
 
 export default useStyles

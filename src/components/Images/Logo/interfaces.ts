@@ -1,4 +1,6 @@
 export interface LogoProps {
-  logo: string
-  variant: 'huge' | 'big' | 'medium' | 'small' | 'tiny'
+  className?: string
+  horizontalAlign?: 'left' | 'center' | 'right'
+  logo: string | undefined
+  variant: 'huge' | 'big' | 'medium' | 'small' | 'tiny'
 }

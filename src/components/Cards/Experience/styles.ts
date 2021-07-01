@@ -3,18 +3,23 @@ import type { Theme } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    'experience-card': {
-      border: '1px solid #FFFFFF',
-      borderRadius: 24,
-      display: 'flex',
-      flexDirection: 'column',
-      height: 160,
-      width: 300,
+    experienceCard: {
+      height: 120,
+      width: 240,
       padding: 24,
+      transition: '1s',
+      '&:hover': {
+        height: 160,
+        width: 260,
+        cursor: 'pointer',
+        transition: '1s',
+      },
       [theme.breakpoints.down('sm')]: {
+        width: '180px !important',
+        height: '120px !important'
       },
     },
   }),
-);
+)
 
 export default useStyles

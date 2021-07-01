@@ -39,6 +39,7 @@ module.exports = {
       1,
       { props: 'never', children: 'never' },
     ],
+    '@typescript-eslint/semi': ['warn', 'never'],
     // @TODO fix Prettier conflict & uncomment the below line
     // 'max-len': [
     //   'error',
@@ -63,14 +64,19 @@ module.exports = {
         'newlines-between': 'always',
         pathGroups: [
           {
-            pattern: 'react*',
+            pattern: 'react',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: 'slick',
             group: 'external',
             position: 'before',
           },
           {
             pattern: '@material-ui',
             group: 'external',
-            position: 'before',
+            position: 'after',
           },
           {
             pattern: 'assets*',
@@ -79,6 +85,12 @@ module.exports = {
           {
             pattern: 'components',
             group: 'internal',
+            position: 'before'
+          },
+          {
+            pattern: 'functions',
+            group: 'internal',
+            position: 'after'
           },
           {
             pattern: './',

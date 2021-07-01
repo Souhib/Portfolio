@@ -23,6 +23,6 @@ const useStyles = makeStyles(() =>
       border: '1px solid #FFFFFF',
     }
   }),
-);
+)
 
 export default useStyles

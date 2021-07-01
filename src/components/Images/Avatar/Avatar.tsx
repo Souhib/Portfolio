@@ -6,13 +6,14 @@ import { AvatarProps } from './interface'
 import useStyles from './styles'
 
 const Avatar: React.FunctionComponent<AvatarProps> = 
-({ isBordered, source, variant }) => {
+({ isAnimated, isBordered, source, variant }) => {
   const classes = useStyles()
 
   return (
     <Box className={[
       classes.imageContainer,
-      isBordered && classes.bordered
+      isBordered && classes.bordered,
+      isAnimated && classes.animatedAvatar
     ].join(' ')}
     >
       <img

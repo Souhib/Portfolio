@@ -25,6 +25,6 @@ const useStyles = makeStyles((theme: Theme) =>
       border: '1px solid #FFFFFF',
     }
   }),
-);
+)
 
 export default useStyles

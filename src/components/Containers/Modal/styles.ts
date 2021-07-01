@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme: Theme) =>
       width: '90%',
       margin: 'auto',
       display: 'flex',
+      justifyContent: 'center',
       border: '2px solid #000',
       boxShadow: theme.shadows[5],
       padding: '24px 32px',

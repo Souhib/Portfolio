@@ -1,13 +1,14 @@
 export type ExperienceProps = {
   company: string
   date: string
-  stack: string
+  stack?: string
   bgColor: string
   job: string
   logo: string
 }
 
 export interface TechnologieProps {
+  active?: boolean
   bgColor: string
   companies: string[]
   language: string

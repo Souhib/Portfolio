@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme: Theme) =>
     modalContainer: {
       position: 'absolute',
       width: '90%',
+      height: '90%',
       margin: 'auto',
       display: 'flex',
       justifyContent: 'center',
@@ -93,7 +94,7 @@ const useStyles = makeStyles((theme: Theme) =>
         marginTop: '16px',
         borderRadius: '14px',
         padding: '0 13px',
-        maxHeight: 350,
+        maxHeight: 450,
         animation: '$shadowFadeIn 0.8s forwards',
         'webkit-animation': '$shadowFadeIn 0.8s forwards',
         overflow: 'scroll',

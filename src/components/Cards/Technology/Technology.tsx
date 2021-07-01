@@ -12,6 +12,7 @@ import useStyles from './styles'
 
 
 const Technologie: React.FunctionComponent<TechnologieProps> = ({
+  active,
   bgColor,
   language,
   companies,
@@ -21,14 +22,12 @@ const Technologie: React.FunctionComponent<TechnologieProps> = ({
 
   return (
     <Box 
-      mt={4} 
-      mb={4} 
       className={classes.technologieCard} 
       style={{ border: `2px solid ${bgColor}` }}
     >
       <Box
         className={classes.cardOverlay}
-        style={{ background: bgColor }}
+        style={{ background: bgColor, opacity: active ? 0.3 : undefined }}
       />
       <Box
         style={{ zIndex: 1 }}

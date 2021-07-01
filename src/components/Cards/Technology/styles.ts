@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       '& ul': {
         paddingInlineStart: 0,
+        listStyle: 'none'
       },
       [theme.breakpoints.down('sm')]: {
         width: '320px',

@@ -57,27 +57,25 @@ const Experience = ({
             color='#C0C0C0'
             variant='small'
           >{company}</Title>
-        </Stack>
-        {!isMobile && (
+          <Subtitle
+            variant='tiny'
+          >{date}</Subtitle>
           <Box
             position='absolute'
-            style={{ bottom: 24 }}
+            style={{ bottom: 32 }}
           >
-            <Subtitle
-              animation='slideIn'
-              animationExit='slideOut'
-              isHovering={isHovered}
-              variant='tiny'
-            >{date}</Subtitle>
-            <Subtitle              
-              animation='slideIn'
-              animationExit='slideOut'
-              animationDelay='0.3s'
-              isHovering={isHovered}
-              variant='tiny'
-            >{stack}</Subtitle>
+            {!isMobile && (
+
+              <Subtitle              
+                animation='slideIn'
+                animationExit='slideOut'
+                animationDelay='0.3s'
+                isHovering={isHovered}
+                variant='tiny'
+              >{stack}</Subtitle>
+            )}
           </Box>
-        )}
+        </Stack>
       </Stack>
     </Box>
   )

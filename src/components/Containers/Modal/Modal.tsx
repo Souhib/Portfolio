@@ -71,7 +71,7 @@ const Modal: React.FunctionComponent<ModalProps> = ({
                 className={classes.description}
               >
                 <Body
-                  variant='medium'
+                  variant='big'
                 >{text}</Body> 
               </Box>
             </Box>

@@ -8,10 +8,10 @@ const useStyles = makeStyles((theme: Theme) =>
       borderRadius: 24,
       display: 'flex',
       flexDirection: 'column',
-      width: 670,
       height: 348,
       padding: 24,
       [theme.breakpoints.down('sm')]: {
+        height: 240
       },
     },
     'logo-position': {

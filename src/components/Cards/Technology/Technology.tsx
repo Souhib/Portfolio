@@ -23,10 +23,18 @@ const Technologie: React.FunctionComponent<TechnologieProps> = ({
     <Box 
       mt={4} 
       mb={4} 
-      className={classes['technologie-card']} 
-      style={{ background: bgColor, border: `1px solid ${bgColor}` }}
+      className={classes.technologieCard} 
+      style={{ border: `2px solid ${bgColor}` }}
     >
-      <Title variant='big'>{language}</Title>
+      <Box
+        className={classes.cardOverlay}
+        style={{ background: bgColor }}
+      />
+      <Box
+        style={{ zIndex: 1 }}
+      >
+        <Title variant='big'>{language}</Title>
+      </Box>
       <ul>
         <Stack
           spacing={1}

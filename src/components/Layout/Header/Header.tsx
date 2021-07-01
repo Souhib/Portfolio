@@ -4,10 +4,10 @@ import { useTheme } from '@material-ui/core/styles'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 import { 
-  ProfilePictureLogo, 
-  LinkedinLogo, 
-  GithubLogo,
-  ContactLogo
+  ProfilePicture, 
+  Linkedin, 
+  Github,
+  Contact
 } from 'assets/img'
 import Clickable from 'components/Containers/Clickable/Clickable'
 import Stack from 'components/Containers/Stack/Stack'
@@ -45,7 +45,7 @@ const Header: React.FunctionComponent = () => {
         <Avatar
           isBordered={false}
           variant='huge'
-          source={ProfilePictureLogo}
+          source={ProfilePicture}
         />
         <Stack spacing={2}>
           <Title
@@ -74,14 +74,14 @@ const Header: React.FunctionComponent = () => {
             <Avatar
               isAnimated
               isBordered
-              source={LinkedinLogo}
+              source={Linkedin}
               variant='small'
             />
           </Clickable>
           <Clickable onClick={mailTo}>
             <Avatar
               isBordered
-              source={ContactLogo}
+              source={Contact}
               variant='big'
             />
           </Clickable>
@@ -89,7 +89,7 @@ const Header: React.FunctionComponent = () => {
             <Avatar
               isAnimated
               isBordered
-              source={GithubLogo}
+              source={Github}
               variant='small'
             />
           </Clickable>

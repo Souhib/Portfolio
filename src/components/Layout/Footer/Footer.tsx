@@ -3,9 +3,9 @@ import React from 'react'
 import { Box, useMediaQuery, useTheme } from '@material-ui/core'
 
 import {
-  LinkedinLogo,
-  GithubLogo,
-  ContactLogo
+  Linkedin,
+  Github,
+  Contact
 } from 'assets/img/'
 import Clickable from 'components/Containers/Clickable/Clickable'
 import Stack from 'components/Containers/Stack/Stack'
@@ -41,7 +41,7 @@ const Footer: React.FunctionComponent = () => {
             <Avatar
               isAnimated
               isBordered
-              source={LinkedinLogo}
+              source={Linkedin}
               variant='small'
             />
           </Clickable>
@@ -49,7 +49,7 @@ const Footer: React.FunctionComponent = () => {
             <Clickable onClick={mailTo}>
               <Avatar
                 isBordered
-                source={ContactLogo}
+                source={Contact}
                 variant='big'
               />
             </Clickable>
@@ -58,7 +58,7 @@ const Footer: React.FunctionComponent = () => {
             <Avatar
               isAnimated
               isBordered
-              source={GithubLogo}
+              source={Github}
               variant='small'
             />
           </Clickable>

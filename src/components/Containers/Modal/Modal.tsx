@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 
 import { Box, Modal as ModalMUI, useMediaQuery, useTheme } from '@material-ui/core'
 
@@ -28,24 +28,28 @@ const Modal: React.FunctionComponent<ModalProps> = ({
   const rootRef = useRef<HTMLDivElement>(null)
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
-  
+  useEffect(() => {
+    const body = document.getElementsByTagName('body')
+    const overflowMode = open ? 'hidden' : 'unset'
+    body[0].style.overflow = overflowMode
+  }, [open])
   return (
-    <div
-      ref={rootRef}
-    >
+    <div>
       <ModalMUI
         open={open || false}
         onClose={onClose}
         aria-labelledby='server-modal-title'
         aria-describedby='server-modal-description'
-        className={classes.modal}     
-        style={{ 
-          backgroundColor: color
-        }}
-
         container={() => rootRef.current}
+        className={classes.modal}
       >
-        <>
+        <div
+          ref={rootRef}
+          className={classes.modalContainer}     
+          style={{ 
+            backgroundColor: color
+          }}
+        >
           <Stack
             className={classes.mainStack}
             horizontalAlign='space-between'
@@ -67,7 +71,7 @@ const Modal: React.FunctionComponent<ModalProps> = ({
                 className={classes.description}
               >
                 <Body
-                  variant='big'
+                  variant='medium'
                 >{text}</Body> 
               </Box>
             </Box>
@@ -108,7 +112,7 @@ const Modal: React.FunctionComponent<ModalProps> = ({
               src={Cross}
             />
           </Box>
-        </>
+        </div>
       </ModalMUI>
     </div>
   )

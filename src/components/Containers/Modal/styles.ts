@@ -4,23 +4,31 @@ import type { Theme } from '@material-ui/core/styles'
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     modal: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      '&:focus': {
+        outline: 'none'
+      },
+    },
+    modalContainer: {
       position: 'absolute',
-      width: '70%',
-      height: '80%',
+      width: '90%',
       margin: 'auto',
       display: 'flex',
       border: '2px solid #000',
       boxShadow: theme.shadows[5],
-      padding: '80px 72px',
+      padding: '24px 32px',
       borderRadius: 40,
       '& .MuiBox-root': {
         justifyContent: 'space-between'
+      },
+      '& div[aria-hidden = true]': {
       },
       [theme.breakpoints.down('sm')]: {
         flexDirection: 'column',
         padding: 32,
         width: '80%',
-        height: '70%',
       },
     },
     bottomBar: {
@@ -35,13 +43,14 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     cross: {
       position: 'absolute',
-      top: 80,
+      top: 24,
       '& img': {
+        cursor: 'pointer',
         width: 32,
         height: 32,
       },
-      [theme.breakpoints.up('sm')]: {
-        right: 80,
+      [theme.breakpoints.up('md')]: {
+        right: 40,
       },
       [theme.breakpoints.down('sm')]: {
         display: 'flex',
@@ -79,7 +88,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
 
     description: {
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down('md')]: {
         marginTop: '16px',
         borderRadius: '14px',
         padding: '0 13px',

@@ -241,6 +241,8 @@ const Main: React.FunctionComponent = () => {
                   logo={school.source}
                   diplomaName={school.title}
                   bgColor={school.bgColor}
+                  location={school.location}
+                  date={school.date}
                 />
               </Clickable>
             ))}
@@ -259,6 +261,8 @@ const Main: React.FunctionComponent = () => {
                   logo={school.source}
                   diplomaName={school.title}
                   bgColor={school.bgColor}
+                  location={school.location}
+                  date={school.date}
                 />
               </Clickable>
             ))}

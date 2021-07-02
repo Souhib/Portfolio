@@ -19,4 +19,6 @@ export interface EducationProps {
   diplomaName: string
   logo: string
   bgColor: string
+  location: string
+  date: string
 }

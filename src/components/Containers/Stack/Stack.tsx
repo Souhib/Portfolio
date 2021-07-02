@@ -12,6 +12,7 @@ const Stack: React.FunctionComponent<ContainerProps> = ({
   isRow,
   spacing = 1,
   verticalAlign,
+  style
 }) => {
   const horizontal = horizontalAlign === 'left'
     ? 'flex-start'
@@ -44,6 +45,7 @@ const Stack: React.FunctionComponent<ContainerProps> = ({
       flexDirection={isRow ? 'row' : 'column'}
       alignItems={isRow ? vertical : horizontal}
       justifyContent={isRow ? horizontal : vertical}
+      style={style}
     >
       {childrenMap}
     </Box>

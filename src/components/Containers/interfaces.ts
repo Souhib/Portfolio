@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 
 export interface ContainerProps {
   bgColor?: string | undefined
@@ -8,6 +8,7 @@ export interface ContainerProps {
   isRow?: boolean
   spacing?: number
   verticalAlign?: 'top' | 'center' | 'bottom'
+  style?: React.CSSProperties
 }
 
 export interface ClickableProps {

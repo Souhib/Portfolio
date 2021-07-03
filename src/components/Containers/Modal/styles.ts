@@ -95,7 +95,7 @@ const useStyles = makeStyles((theme: Theme) =>
         borderRadius: '14px',
         padding: '0 13px',
         maxHeight: 450,
-        animation: '$shadowFadeIn 0.8s forwards',
+        animation: '$shadowFadeIn 0.5s forwards',
         'webkit-animation': '$shadowFadeIn 0.8s forwards',
         overflow: 'scroll',
       }

@@ -22,19 +22,16 @@ import Footer from 'components/Layout/Footer/Footer'
 import Header from 'components/Layout/Header/Header'
 import Title from 'components/Text/Title/Title'
 import { schools, experiences, TechnicalStack, TechnicalStackKeys, ModalPropsType } from 'data/data'
-import { useWindowSize } from 'functions/useWindowSize'
 
 const Main: React.FunctionComponent = () => {
-  const { width, height } = useWindowSize()
 
   const useStyles = makeStyles((theme: Theme) => createStyles({
     app: {
-      height: '100%',
       display: 'flex',
       flexDirection: 'column',
       padding: '32px',
       [theme.breakpoints.down('sm')]: {
-        padding: '8px',
+        padding: '16px',
       },
     },
     educationStack: {
@@ -129,27 +126,34 @@ const Main: React.FunctionComponent = () => {
     slickEducation: {
       '& .slick-slide': {
         marginRight: 16,
-        width: `calc(${width}px / 1.1) !important`,
+        [theme.breakpoints.up('sm')]: {
+          width: `calc(${window.innerWidth}px / 1.1) !important`,
+        },
         [theme.breakpoints.down('sm')]: {
-          marginRight: 8
+          marginRight: 8,
         }
       }
     },
   }))
   const classes = useStyles()
+  const [isSwiping, setIsSwiping] = useState(false)
+
+  const swipe = () => setIsSwiping(!isSwiping)
   const sliderProps = {
     dots: false,
-    draggable: true,
+    draggable: false,
+    onSwipe: swipe,
     infinite: true,
     variableWidth: true,
     swipeToSlide: true,
     swipe: true,
-    lazyload: true,
+    lazyload: false,
     speed: 300,
   }
   const [modalData, setModalData] = useState<ModalPropsType | undefined>(undefined)
   const [filter, setFilter] = useState<TechnicalStackKeys | undefined>(undefined)
   const [filteredExperiences, setFilteredExperiences] = useState<ModalPropsType[]>(experiences)
+  console.log('modalData :', modalData)
   useEffect(() => {
     filter 
       ? setFilteredExperiences(experiences.filter(experience => experience.mainTechno?.includes(filter) ))

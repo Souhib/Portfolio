@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Box } from '@material-ui/core'
+import { Box, useMediaQuery, useTheme } from '@material-ui/core'
 
 import { TechnologieProps } from 'components/Cards/interfaces'
 import Stack from 'components/Containers/Stack/Stack'
@@ -19,6 +19,8 @@ const Technologie: React.FunctionComponent<TechnologieProps> = ({
   logo,
 }) => {
   const classes = useStyles()
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
 
   return (
     <Box 
@@ -32,7 +34,7 @@ const Technologie: React.FunctionComponent<TechnologieProps> = ({
       <Box
         style={{ zIndex: 1 }}
       >
-        <Title variant='big'>{language}</Title>
+        <Title variant={isMobile ? 'medium' : 'big'}>{language}</Title>
       </Box>
       <ul>
         <Stack
@@ -61,7 +63,7 @@ const Technologie: React.FunctionComponent<TechnologieProps> = ({
       <Box className={classes.logoBottomRight}>
         <Logo
           logo={logo}
-          variant='huge'
+          variant={isMobile ? 'medium' : 'huge'}
         />
       </Box>
     </Box>

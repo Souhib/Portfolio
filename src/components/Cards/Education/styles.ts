@@ -19,11 +19,16 @@ const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.down('sm')]: {
         height: 240
       },
+      [theme.breakpoints.down('xs')]: {
+        height: 160,
+        margin: 'auto',
+        width: window.innerWidth - 88
+      },
     },
     'logo-position': {
       marginLeft: 'auto',
       marginTop: 'auto',
-      zIndex: -1,
+
     },
     'overlay': {
       position: 'absolute',

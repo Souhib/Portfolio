@@ -32,6 +32,10 @@ const useStyles = makeStyles((theme: Theme) =>
         width: '320px',
         height: '160px',
       },
+      [theme.breakpoints.down('xs')]: {
+        width: '160px',
+        height: '80px',
+      },
     },
     cardOverlay: {
       position: 'absolute',

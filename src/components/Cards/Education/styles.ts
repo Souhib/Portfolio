@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'flex',
       flexDirection: 'column',
       height: 348,
+      cursor: 'pointer',
       padding: 24,
       '&:hover $overlay': {
         opacity: 0.3,
@@ -20,9 +21,9 @@ const useStyles = makeStyles((theme: Theme) =>
         height: 240
       },
       [theme.breakpoints.down('xs')]: {
-        height: 160,
+        height: 180,
         margin: 'auto',
-        width: window.innerWidth - 88
+        width: 200
       },
     },
     'logo-position': {
@@ -38,7 +39,7 @@ const useStyles = makeStyles((theme: Theme) =>
       left: 0,
       transition: '0.8s',
       zIndex: 0,
-    }
+    },
   }),
 )
 

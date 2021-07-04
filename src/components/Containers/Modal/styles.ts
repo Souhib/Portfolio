@@ -7,21 +7,25 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      '&:focus': {
-        outline: 'none'
-      },
+ 
     },
     modalContainer: {
       position: 'absolute',
+      minHeight: '90%',
       width: '90%',
-      height: '90%',
       margin: 'auto',
       display: 'flex',
+      animationDuration: '0.8s',
+      animationFillMode: 'forwards',
+      animationTimingFunction: 'ease-in-out',
       justifyContent: 'center',
       border: '2px solid #000',
       boxShadow: theme.shadows[5],
       padding: '24px 32px',
       borderRadius: 40,
+      '&:focus': {
+        outline: 'none'
+      },
       '& .MuiBox-root': {
         justifyContent: 'space-between'
       },
@@ -42,6 +46,17 @@ const useStyles = makeStyles((theme: Theme) =>
           order: 1,
         }
       }
+    },
+    overlay: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      animation: '$opacityBackground 0.5s ease-in-out forwards',
+      opacity: 0.8,
+      zIndex: -1,
+      borderRadius: '40px',
+      right: 0,
+      bottom: 0,
     },
     cross: {
       position: 'absolute',
@@ -110,7 +125,18 @@ const useStyles = makeStyles((theme: Theme) =>
 
       }
     },
- 
+    '@keyframes opacityBackground': {
+      '0%': { 
+        opacity: 0.5,
+      },
+      '100%': {
+        opacity: 0.8,
+      }
+    },
+    // .animate__backOutLeft {
+    //   -webkit-animation-name: backOutLeft;
+    //   animation-name: backOutLeft;
+    // }
   }),
 )
 

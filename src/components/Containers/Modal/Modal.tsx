@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import { Box, Modal as ModalMUI, useMediaQuery, useTheme } from '@material-ui/core'
 
@@ -13,6 +13,7 @@ import Title from 'components/Text/Title/Title'
 import useStyles from './styles'
 
 const Modal: React.FunctionComponent<ModalProps> = ({
+  animation,
   title,
   subtitle,
   location,
@@ -23,21 +24,22 @@ const Modal: React.FunctionComponent<ModalProps> = ({
   image,
   text
 }) => {
-
   const classes = useStyles()
   const rootRef = useRef<HTMLDivElement>(null)
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+
   useEffect(() => {
     const body = document.getElementsByTagName('body')
     const overflowMode = open ? 'hidden' : 'unset'
     body[0].style.overflow = overflowMode
   }, [open])
+  console.log(open)
   return (
     <div>
       <ModalMUI
         open={open || false}
-        onClose={onClose}
+
         aria-labelledby='server-modal-title'
         aria-describedby='server-modal-description'
         container={() => rootRef.current}
@@ -45,11 +47,17 @@ const Modal: React.FunctionComponent<ModalProps> = ({
       >
         <div
           ref={rootRef}
-          className={classes.modalContainer}     
-          style={{ 
-            backgroundColor: color
+          className={classes.modalContainer}
+          style={{
+            animationName: animation
           }}
         >
+          <Box
+            className={classes.overlay}
+            style={{ 
+              backgroundColor: color
+            }}
+          />
           <Stack
             className={classes.mainStack}
             horizontalAlign='space-between'

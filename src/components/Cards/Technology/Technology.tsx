@@ -52,8 +52,8 @@ const Technologie: React.FunctionComponent<TechnologieProps> = ({
                   spacing={1}
                   horizontalAlign='left'
                 >
-                  <Subtitle variant='medium'>●</Subtitle>
-                  <Subtitle variant='medium'>{company}</Subtitle>
+                  <Subtitle variant={isMobile ? 'tiny' : 'medium'}>●</Subtitle>
+                  <Subtitle variant={isMobile ? 'tiny' : 'medium'}>{company}</Subtitle>
                 </Stack>
               </li>
             )
@@ -63,7 +63,7 @@ const Technologie: React.FunctionComponent<TechnologieProps> = ({
       <Box className={classes.logoBottomRight}>
         <Logo
           logo={logo}
-          variant={isMobile ? 'medium' : 'huge'}
+          variant={isMobile ? 'small' : 'big'}
         />
       </Box>
     </Box>

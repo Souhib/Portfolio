@@ -4,6 +4,7 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
+
 import { Box, useMediaQuery } from '@material-ui/core'
 import { createStyles, Theme, useTheme } from '@material-ui/core/styles'
 import { makeStyles } from '@material-ui/core/styles'
@@ -30,6 +31,7 @@ const Main: React.FunctionComponent = () => {
       display: 'flex',
       flexDirection: 'column',
       padding: '32px',
+      transition: '0.3s',
       [theme.breakpoints.down('sm')]: {
         padding: '16px',
       },
@@ -53,8 +55,8 @@ const Main: React.FunctionComponent = () => {
         left: 0,
         zIndex: 10,
         transition: '0.8s',
-        borderTopLeftRadius: 16,
-        borderBottomLeftRadius: 16,
+        borderTopLeftRadius: 8,
+        borderBottomLeftRadius: 8,
         '&:hover': {
           '&::before': {
             width: 36,
@@ -84,8 +86,8 @@ const Main: React.FunctionComponent = () => {
         height: '100%',
         zIndex: 10,
         transition: '0.8s',
-        borderTopRightRadius: 16,
-        borderBottomRightRadius: 16,
+        borderTopRightRadius: 8,
+        borderBottomRightRadius: 8,
         right: 0,
         '&:hover': {
           '&::before': {
@@ -153,7 +155,31 @@ const Main: React.FunctionComponent = () => {
   const [modalData, setModalData] = useState<ModalPropsType | undefined>(undefined)
   const [filter, setFilter] = useState<TechnicalStackKeys | undefined>(undefined)
   const [filteredExperiences, setFilteredExperiences] = useState<ModalPropsType[]>(experiences)
-  console.log('modalData :', modalData)
+  const [rightCardAnimation, setRightCardAnimation] = useState('')
+  const [leftCardAnimation, setLeftCardAnimation] = useState('')
+  const [modalAnimation, setModalAnimation] = useState<string | undefined>(undefined)
+
+  const closeModal = () => {
+    setTimeout(() => {
+      setModalData(undefined)
+    }, 800)
+    setTimeout(() => {
+      if (leftCardAnimation) 
+        setLeftCardAnimation('backInUp')
+      else
+        setRightCardAnimation('backInUp')
+    }, 800)
+  }
+
+  const openEducationModal = (index: number, data?: ModalPropsType) => {
+    if (index === 0) setLeftCardAnimation('backOutDown')
+    else setRightCardAnimation('backOutDown')
+    setModalAnimation('backInDown')
+    // setModalAnimation('backInDown')
+    setTimeout(() => {
+      setModalData(data)
+    }, 800)
+  }
   useEffect(() => {
     filter 
       ? setFilteredExperiences(experiences.filter(experience => experience.mainTechno?.includes(filter) ))
@@ -169,6 +195,9 @@ const Main: React.FunctionComponent = () => {
   return (
     <Box
       className={classes.app}
+      style={{
+        filter: modalData ? 'blur(10px)' : undefined
+      }}
     >
       <Header />
       <Box mt={5}>
@@ -237,18 +266,16 @@ const Main: React.FunctionComponent = () => {
             {...sliderProps}
           >
             {schools.map((school: ModalPropsType , index: number) => (
-              <Clickable
+              <Education
+                animation={index === 0 ? leftCardAnimation : rightCardAnimation}
+                logo={school.source}
+                diplomaName={school.title}
+                onClick={() => openEducationModal(index, school)}
                 key={index}
-                onClick={() => setModalData(school)}
-              >
-                <Education
-                  logo={school.source}
-                  diplomaName={school.title}
-                  bgColor={school.bgColor}
-                  location={school.location}
-                  date={school.date}
-                />
-              </Clickable>
+                bgColor={school.bgColor}
+                location={school.location}
+                date={school.date}
+              />
             ))}
           </Slider> ) : (
           <Stack
@@ -257,18 +284,16 @@ const Main: React.FunctionComponent = () => {
             spacing={2}
           >
             {schools.map((school: ModalPropsType , index: number) => (
-              <Clickable
+              <Education
+                animation={index === 0 ? leftCardAnimation : rightCardAnimation}
+                logo={school.source}
+                diplomaName={school.title}
                 key={index}
-                onClick={() => setModalData(school)}
-              >
-                <Education
-                  logo={school.source}
-                  diplomaName={school.title}
-                  bgColor={school.bgColor}
-                  location={school.location}
-                  date={school.date}
-                />
-              </Clickable>
+                onClick={() => openEducationModal(index, school)}
+                bgColor={school.bgColor}
+                location={school.location}
+                date={school.date}
+              />
             ))}
           </Stack>
         )}
@@ -276,10 +301,11 @@ const Main: React.FunctionComponent = () => {
 
       <Stack>
         <Modal
+          animation={modalAnimation}
           open={!!modalData}
           title={modalData?.title}
           subtitle={modalData?.subtitle}
-          onClose={() => setModalData(undefined)}
+          onClose={closeModal}
           location={modalData?.location}
           date={modalData?.date}
           color={modalData?.bgColor}

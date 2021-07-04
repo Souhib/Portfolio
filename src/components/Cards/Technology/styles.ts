@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       [theme.breakpoints.down('xs')]: {
         width: '160px',
-        height: '80px',
+        height: '120px',
       },
     },
     cardOverlay: {

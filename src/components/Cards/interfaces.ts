@@ -16,9 +16,11 @@ export interface TechnologieProps {
 }
 
 export interface EducationProps {
+  animation: string
   diplomaName: string
   logo: string
   bgColor: string
   location: string
+  onClick(): void
   date: string
 }

@@ -34,7 +34,6 @@ const Modal: React.FunctionComponent<ModalProps> = ({
     const overflowMode = open ? 'hidden' : 'unset'
     body[0].style.overflow = overflowMode
   }, [open])
-  console.log(open)
   return (
     <div>
       <ModalMUI

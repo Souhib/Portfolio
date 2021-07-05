@@ -22,11 +22,11 @@ export interface ClickableProps {
 // }
 
 export interface ModalProps {
-  animation?: string
   title?: string
   open?: boolean
   subtitle?: string
   onClose(): void
+  popFrom?: string
   location?: string
   date?: string
   color?: string

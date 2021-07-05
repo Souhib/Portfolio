@@ -13,7 +13,6 @@ import Title from 'components/Text/Title/Title'
 import useStyles from './styles'
 
 const Modal: React.FunctionComponent<ModalProps> = ({
-  animation,
   title,
   subtitle,
   location,
@@ -21,34 +20,47 @@ const Modal: React.FunctionComponent<ModalProps> = ({
   onClose,
   open,
   color,
+  popFrom,
   image,
   text
 }) => {
   const classes = useStyles()
-  const rootRef = useRef<HTMLDivElement>(null)
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
-
+  const [isOpen, setIsOpen] = useState<boolean>(false)
+  const modalContainerRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
-    const body = document.getElementsByTagName('body')
-    const overflowMode = open ? 'hidden' : 'unset'
-    body[0].style.overflow = overflowMode
+    if (open)
+    {
+      const body = document.getElementsByTagName('body')
+      const overflowMode = open ? 'hidden' : 'unset'
+      body[0].style.overflow = overflowMode
+      setIsOpen(true)
+    }
   }, [open])
+  const closeModal = () => {
+    if (modalContainerRef.current) 
+      modalContainerRef.current.style.animationName = isMobile ? 'backOutDown' : `backOut${popFrom}`
+    setTimeout(() => {
+      onClose()
+      setIsOpen(false)
+    }, 500)
+  }
   return (
     <div>
       <ModalMUI
-        open={open || false}
+        open={isOpen}
 
         aria-labelledby='server-modal-title'
         aria-describedby='server-modal-description'
-        container={() => rootRef.current}
+        container={() => modalContainerRef.current}
         className={classes.modal}
       >
         <div
-          ref={rootRef}
+          ref={modalContainerRef}
           className={classes.modalContainer}
           style={{
-            animationName: animation
+            animationName: isMobile ? 'backInDown' : `backIn${popFrom}`
           }}
         >
           <Box
@@ -113,7 +125,7 @@ const Modal: React.FunctionComponent<ModalProps> = ({
           </Stack>
           <Box
             className={classes.cross}
-            onClick={onClose}
+            onClick={closeModal}
           >
             <img
               src={Cross}

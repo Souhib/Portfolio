@@ -13,6 +13,9 @@ const useStyles = makeStyles((theme: Theme) =>
       height: 348,
       cursor: 'pointer',
       padding: 24,
+      animationDuration: '0.8s',
+      animationFillMode: 'forwards',
+      animationTimingFunction: 'ease-in-out',
       '&:hover $overlay': {
         opacity: 0.3,
         transition: '0.8s'

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
@@ -154,39 +154,39 @@ const Main: React.FunctionComponent = () => {
   const [modalData, setModalData] = useState<ModalPropsType | undefined>(undefined)
   const [filter, setFilter] = useState<TechnicalStackKeys | undefined>(undefined)
   const [filteredExperiences, setFilteredExperiences] = useState<ModalPropsType[]>(experiences)
-  const [rightCardAnimation, setRightCardAnimation] = useState('')
-  const [leftCardAnimation, setLeftCardAnimation] = useState('')
-  const [modalAnimation, setModalAnimation] = useState<string | undefined>(undefined)
-
+  const [isLeftCard, setIsLeftCard] = useState(false)
+  const leftRef = useRef<HTMLDivElement>(null)
+  const rightRef = useRef<HTMLDivElement>(null)
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+  
   const closeModal = () => {
-    if (leftCardAnimation) {
-      setModalAnimation('backInLeft')
-    }
-    else
-      setModalAnimation('backInRight')
-
-    setTimeout(() => {
-      setModalData(undefined)
-      if (leftCardAnimation) 
-        setLeftCardAnimation('backInLeft')
+    if (leftRef.current && rightRef.current)
+    {
+      if (isLeftCard)
+        leftRef.current.style.animationName = isMobile ? 'backInDown' : 'backInLeft' 
       else
-        setRightCardAnimation('backInRight')
-    }, 800)
+        rightRef.current.style.animationName = isMobile ? 'backInDown' : 'backInRight'
+    }
+    setModalData(undefined)
   }
+
 
   const openEducationModal = (index: number, data?: ModalPropsType) => {
     if (index === 0) {
-      setLeftCardAnimation('backOutLeft')
-      setModalAnimation('backInLeft')
+      if (leftRef.current)
+        leftRef.current.style.animationName = isMobile ? 'backOutDown' : 'backOutLeft'
+      setIsLeftCard(true)
     }
     else {
-      setRightCardAnimation('backOutRight')
-      setModalAnimation('backInRight')
+      if (rightRef.current)
+        rightRef.current.style.animationName = isMobile ? 'backOutDown' : 'backOutRight'
+      setIsLeftCard(false)
     }
     // setModalAnimation('backInDown')
     setTimeout(() => {
       setModalData(data)
-    }, 800)
+    }, 500)
   }
   useEffect(() => {
     filter 
@@ -198,8 +198,6 @@ const Main: React.FunctionComponent = () => {
       ? setFilter(undefined)
       : setFilter(index)
   }
-  const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
   return (
     <Box
       className={classes.app}
@@ -271,11 +269,11 @@ const Main: React.FunctionComponent = () => {
         { isMobile ? (
           <Slider
             className={`${classes.slick} ${classes.slickEducation}`}
-            {...sliderProps}
+            {...{...sliderProps, infinite: false}}
           >
             {schools.map((school: ModalPropsType , index: number) => (
               <Education
-                animation={index === 0 ? leftCardAnimation : rightCardAnimation}
+                ref={index === 0 ? leftRef : rightRef}
                 logo={school.source}
                 diplomaName={school.title}
                 onClick={() => openEducationModal(index, school)}
@@ -293,7 +291,7 @@ const Main: React.FunctionComponent = () => {
           >
             {schools.map((school: ModalPropsType , index: number) => (
               <Education
-                animation={index === 0 ? leftCardAnimation : rightCardAnimation}
+                ref={index === 0 ? leftRef : rightRef}
                 logo={school.source}
                 diplomaName={school.title}
                 key={index}
@@ -309,12 +307,12 @@ const Main: React.FunctionComponent = () => {
 
       <Stack>
         <Modal
-          animation={modalAnimation}
           open={!!modalData}
           title={modalData?.title}
           subtitle={modalData?.subtitle}
           onClose={closeModal}
           location={modalData?.location}
+          popFrom={isLeftCard ? 'Left' : 'Right'}
           date={modalData?.date}
           color={modalData?.bgColor}
           image={modalData?.source}

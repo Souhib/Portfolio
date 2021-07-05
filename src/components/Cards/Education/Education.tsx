@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { forwardRef, LegacyRef, Ref, useEffect, useRef, useState } from 'react'
 
 import { Box, useMediaQuery, useTheme } from '@material-ui/core'
 
@@ -11,17 +11,16 @@ import theme from 'theme'
 
 import useStyles from './styles'
 
-const Education: React.FunctionComponent<EducationProps> = ({ animation, diplomaName, logo, bgColor, location, date, onClick }) => {
+const Education = forwardRef<HTMLDivElement, EducationProps>(({ diplomaName, logo, bgColor, location, date, onClick }, ref) => {
   const classes = useStyles()
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
-
   return (
-    <Box
+    <div
+      ref={ref}
       className={classes['education-card']}
       onClick={onClick}
       style={{
-        animation: `${animation} 0.8s ease-in-out forwards`,
         border: `2px solid ${bgColor}`,
       }}
     >
@@ -57,8 +56,10 @@ const Education: React.FunctionComponent<EducationProps> = ({ animation, diploma
           variant={isMobile ? 'small' : 'medium'}
         />
       </Box>
-    </Box>
+    </div>
   )
-}
+})
+
+Education.displayName = 'Education'
 
 export default Education

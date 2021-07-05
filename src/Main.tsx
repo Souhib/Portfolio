@@ -159,22 +159,30 @@ const Main: React.FunctionComponent = () => {
   const [modalAnimation, setModalAnimation] = useState<string | undefined>(undefined)
 
   const closeModal = () => {
+    if (leftCardAnimation) {
+      setModalAnimation('backInLeft')
+    }
+    else
+      setModalAnimation('backInRight')
+
     setTimeout(() => {
-      setModalAnimation('backInUp')
-    }, 800)
-    setModalData(undefined)
-    setTimeout(() => {
+      setModalData(undefined)
       if (leftCardAnimation) 
-        setLeftCardAnimation('backInUp')
+        setLeftCardAnimation('backInLeft')
       else
-        setRightCardAnimation('backInUp')
+        setRightCardAnimation('backInRight')
     }, 800)
   }
 
   const openEducationModal = (index: number, data?: ModalPropsType) => {
-    if (index === 0) setLeftCardAnimation('backOutDown')
-    else setRightCardAnimation('backOutDown')
-    setModalAnimation('backInUp')
+    if (index === 0) {
+      setLeftCardAnimation('backOutLeft')
+      setModalAnimation('backInLeft')
+    }
+    else {
+      setRightCardAnimation('backOutRight')
+      setModalAnimation('backInRight')
+    }
     // setModalAnimation('backInDown')
     setTimeout(() => {
       setModalData(data)

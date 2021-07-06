@@ -144,7 +144,7 @@ const Main: React.FunctionComponent = () => {
     dots: false,
     draggable: false,
     onSwipe: swipe,
-    infinite: true,
+    infinite: false,
     variableWidth: true,
     swipeToSlide: true,
     swipe: true,
@@ -157,21 +157,41 @@ const Main: React.FunctionComponent = () => {
   const [isLeftCard, setIsLeftCard] = useState(false)
   const leftRef = useRef<HTMLDivElement>(null)
   const rightRef = useRef<HTMLDivElement>(null)
+  const experienceCardRef = Array(experiences.length).fill(0).map(() => useRef<HTMLDivElement>(null))
+  const experienceCardIndex = useRef<number>(-1)
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
-  
+
   const closeModal = () => {
-    if (leftRef.current && rightRef.current)
+    if (!modalData?.mainTechno)
     {
-      if (isLeftCard)
-        leftRef.current.style.animationName = isMobile ? 'backInDown' : 'backInLeft' 
-      else
-        rightRef.current.style.animationName = isMobile ? 'backInDown' : 'backInRight'
+      if (leftRef.current && rightRef.current)
+      {
+        if (isLeftCard)
+          leftRef.current.style.animationName = isMobile ? 'backInDown' : 'backInLeft' 
+        else
+          rightRef.current.style.animationName = isMobile ? 'backInDown' : 'backInRight'
+      }
+    }
+    else {
+      const cardRef = experienceCardRef[experienceCardIndex.current].current
+      
+      if (cardRef) 
+        cardRef.style.animationName = 'backInDown'
+      experienceCardIndex.current = -1
     }
     setModalData(undefined)
   }
 
-
+  const openExperienceModal = (index: number, data?: ModalPropsType) => () => {
+    const cardRef = experienceCardRef[index].current
+    if (cardRef) 
+      cardRef.style.animationName = 'backOutDown'
+    experienceCardIndex.current = index
+    setTimeout(() => {
+      setModalData(data)
+    }, 500)
+  }
   const openEducationModal = (index: number, data?: ModalPropsType) => {
     if (index === 0) {
       if (leftRef.current)
@@ -212,15 +232,21 @@ const Main: React.FunctionComponent = () => {
         </Box>
         <Slider
           className={classes.slick}
-          {...sliderProps}
+          {
+            ...{
+              ...sliderProps,
+            }
+          }
         >
           {filteredExperiences.map((experience, index) => {
             return (
               <Clickable
                 key={index}
-                onClick={() => setModalData(experience)}
+                onClick={openExperienceModal(index, experience)}
               >
                 <Experience
+                  ref={experienceCardRef[index]}
+                  isAnimated={!!modalData?.mainTechno}
                   bgColor={experience.bgColor}
                   date={experience.date}
                   company={experience.subtitle}
@@ -312,6 +338,7 @@ const Main: React.FunctionComponent = () => {
           subtitle={modalData?.subtitle}
           onClose={closeModal}
           location={modalData?.location}
+          isExperience={!!modalData?.mainTechno}
           popFrom={isLeftCard ? 'Left' : 'Right'}
           date={modalData?.date}
           color={modalData?.bgColor}

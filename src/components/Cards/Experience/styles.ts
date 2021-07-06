@@ -7,7 +7,10 @@ const useStyles = makeStyles((theme: Theme) =>
       height: 120,
       width: 240,
       padding: 24,
-      transition: '1s',
+      transition: '0.8s',
+      animationDuration: '0.8s',
+      animationFillMode: 'forwards',
+      animationTimingFunction: 'ease-in-out',
       '&:hover': {
         height: 160,
         width: 260,

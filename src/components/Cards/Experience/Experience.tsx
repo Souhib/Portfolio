@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { forwardRef, useRef, useState } from 'react'
 
 import { Box, useMediaQuery, useTheme } from '@material-ui/core'
 
@@ -10,36 +10,36 @@ import Title from 'components/Text/Title/Title'
 
 import useStyles from './styles'
 
-const Experience = ({
+const Experience = forwardRef<HTMLDivElement, ExperienceProps>(({
   company,
   date,
   bgColor,
   stack,
   job,
   logo,
-}: ExperienceProps) => {
+}, ref) => {
   const classes = useStyles()
   const theme = useTheme()
   const [isHovered, setIsHovered] = useState(false)
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
-
-  const animation = isHovered ? 'biggerCard' : 'smallerCard'
+ 
   const containerStyle = {
     borderRadius: 8,
+    backgroundColor: bgColor,
     border: `2px solid ${isHovered ? '#FFFFFF' : bgColor}`,
-    transition: '.5s',
   }
 
   return (
-    <Box
+    <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      bgcolor={bgColor}
+      className={classes.experienceCard}
       style={containerStyle}
+      ref={ref}
     >
       <Stack
         spacing={2}
-        className={classes.experienceCard}
+        // className={classes.experienceCard}
         verticalAlign='center'
       >
         <Logo
@@ -77,8 +77,10 @@ const Experience = ({
           </Box>
         </Stack>
       </Stack>
-    </Box>
+    </div>
   )
-}
+})
+
+Experience.displayName = 'Experience'
 
 export default Experience

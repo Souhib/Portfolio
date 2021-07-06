@@ -25,7 +25,9 @@ export interface ModalProps {
   title?: string
   open?: boolean
   subtitle?: string
-  onClose(): void
+  // eslint-disable-next-line no-unused-vars
+  onClose(currentRef?: React.RefObject<HTMLDivElement>): void
+  isExperience: boolean
   popFrom?: string
   location?: string
   date?: string

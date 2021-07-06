@@ -1,6 +1,7 @@
 export type ExperienceProps = {
   company: string
   date: string
+  isAnimated?: boolean
   stack?: string
   bgColor: string
   job: string

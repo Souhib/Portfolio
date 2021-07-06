@@ -18,6 +18,7 @@ const Modal: React.FunctionComponent<ModalProps> = ({
   location,
   date,
   onClose,
+  isExperience,
   open,
   color,
   popFrom,
@@ -33,14 +34,14 @@ const Modal: React.FunctionComponent<ModalProps> = ({
     if (open)
     {
       const body = document.getElementsByTagName('body')
-      const overflowMode = open ? 'hidden' : 'unset'
+      const overflowMode = isOpen ? 'hidden' : 'unset'
       body[0].style.overflow = overflowMode
       setIsOpen(true)
     }
   }, [open])
   const closeModal = () => {
     if (modalContainerRef.current) 
-      modalContainerRef.current.style.animationName = isMobile ? 'backOutDown' : `backOut${popFrom}`
+      modalContainerRef.current.style.animationName = isMobile || isExperience ? 'backOutDown' : `backOut${popFrom}`
     setTimeout(() => {
       onClose()
       setIsOpen(false)
@@ -50,7 +51,6 @@ const Modal: React.FunctionComponent<ModalProps> = ({
     <div>
       <ModalMUI
         open={isOpen}
-
         aria-labelledby='server-modal-title'
         aria-describedby='server-modal-description'
         container={() => modalContainerRef.current}
@@ -60,7 +60,7 @@ const Modal: React.FunctionComponent<ModalProps> = ({
           ref={modalContainerRef}
           className={classes.modalContainer}
           style={{
-            animationName: isMobile ? 'backInDown' : `backIn${popFrom}`
+            animationName: isMobile || isExperience ? 'backInDown' : `backIn${popFrom}`
           }}
         >
           <Box

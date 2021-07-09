@@ -17,7 +17,7 @@ import Title from 'components/Text/Title/Title'
 const data = {
   socials: {
     mail: 'mailto:souhib.trabelsi@epitech.eu',
-    linkedin: 'https://www.linkedin.com/in/keddache/',
+    linkedin: 'https://www.linkedin.com/in/souhib-trabelsi/',
     github: 'https://github.com/Souhib'
   }
 }
@@ -51,16 +51,16 @@ const Header: React.FunctionComponent = () => {
           <Title
             variant='big'
             textAlign={responsiveHorizontal}
-          >Souhib Keddache</Title>
+          >Souhib Trabelsi</Title>
           <Subtitle
             variant='big'
             textAlign={responsiveHorizontal}
-          >Front End Engineer @ Café</Subtitle>
+          >Software Developer</Subtitle>
           <Subtitle
             variant='big'
             textAlign={responsiveHorizontal}
           >
-          #OpenToWork - End of studies internship
+          Looking for a 6 months end of study internship
           </Subtitle>
         </Stack>
       </Stack>

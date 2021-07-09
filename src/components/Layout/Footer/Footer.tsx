@@ -14,7 +14,7 @@ import Subtitle from 'components/Text/Subtitle/Subtitle'
 const data = {
   socials: {
     mail: 'mailto:souhib.trabelsi@epitech.eu',
-    linkedin: 'https://www.linkedin.com/in/keddache/',
+    linkedin: 'https://www.linkedin.com/in/souhib-trabelsi/',
     github: 'https://github.com/Souhib'
   }
 }
@@ -66,11 +66,11 @@ const Footer: React.FunctionComponent = () => {
         <Subtitle
           textAlign='center'
           variant='small'
-        >Made by Keddache Rayan</Subtitle>
+        >Made by Souhib Trabelsi</Subtitle>
         <Subtitle
           textAlign='center'
           variant='small'
-        >Contact@KeddacheRayan.com</Subtitle>
+        >souhib.trabelsi@epitech.eu</Subtitle>
       </Stack>
     </Box>
   )

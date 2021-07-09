@@ -1,4 +1,4 @@
-import React, { forwardRef, LegacyRef, Ref, useEffect, useRef, useState } from 'react'
+import React, { forwardRef } from 'react'
 
 import { Box, useMediaQuery, useTheme } from '@material-ui/core'
 
@@ -7,7 +7,6 @@ import Stack from 'components/Containers/Stack/Stack'
 import Logo from 'components/Images/Logo/Logo'
 import Subtitle from 'components/Text/Subtitle/Subtitle'
 import Title from 'components/Text/Title/Title'
-import theme from 'theme'
 
 import useStyles from './styles'
 

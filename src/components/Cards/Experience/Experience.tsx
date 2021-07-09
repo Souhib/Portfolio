@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef, useState } from 'react'
+import React, { forwardRef, useState } from 'react'
 
 import { Box, useMediaQuery, useTheme } from '@material-ui/core'
 

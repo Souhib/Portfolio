@@ -88,6 +88,7 @@ const Modal: React.FunctionComponent<ModalProps> = ({
             <Box className={classes.linebreak}>
               <Box 
                 className={classes.description}
+                // style={{maxWidth: '80%'}}
               >
                 <Body
                   variant='big'

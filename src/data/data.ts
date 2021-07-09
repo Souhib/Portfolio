@@ -73,7 +73,7 @@ export const experiences: ModalPropsType[] = [
     title: 'Software Engineer',
     bgColor: '#42004A',
     stack: 'Python | AWS | GCP',
-    date: 'Feb 2021 - May 2021',
+    date: 'Feb 2021 - Aug 2021',
     subtitle: 'Cloudeasieer',
     source: Cloudeasier,
     location: 'Paris - France',

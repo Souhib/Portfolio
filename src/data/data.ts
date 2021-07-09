@@ -328,7 +328,7 @@ It is designed to encourage open-mindedness, meetings with influencers and exper
     bgColor: '#122767'
   },
   {
-    title: 'Certificate in Software Engineering.',
+    title: 'Certificate in Software Engineering',
     subtitle: 'San Francisco State University',
     location: 'San Francisco - USA',
     date: '2020 - 2021',

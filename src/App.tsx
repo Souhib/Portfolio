@@ -1,9 +1,13 @@
 import React from 'react'
 
 import './App.css'
-import Main from './Main'
+import { googleAnalyticsInit } from 'functions/googleAnalytics'
 
+import Main from './Main'
 const App: React.FunctionComponent = () => {
+
+  googleAnalyticsInit()
+
   return <Main />
 }
 

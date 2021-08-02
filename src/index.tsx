@@ -1,17 +1,10 @@
 import React from 'react'
 
-import GA4React from 'ga-4-react'
 import ReactDOM from 'react-dom'
 import './index.css'
 
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-
-const ga4react = new GA4React('G-YGFNP9DBVS')
-ga4react.initialize()
-  .then((ga4) => {
-    ga4.pageview('/')
-  })
 
 ReactDOM.render(
   <React.StrictMode>

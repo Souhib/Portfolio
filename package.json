@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@types/howler": "2.2.2",
     "@types/jest": "^26.0.15",
     "@types/material-ui": "0.21.8",
     "@types/node": "^12.0.0",
@@ -15,9 +16,9 @@
     "@types/react-dom": "^17.0.0",
     "@types/slick-carousel": "1.6.34",
     "ga-4-react": "^0.1.281",
+    "howler": "2.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-ga": "^3.3.0",
     "react-scripts": "4.0.3",
     "react-slick": "0.28.1",
     "slick-carousel": "1.8.1",
@@ -49,8 +50,7 @@
     ]
   },
   "devDependencies": {
-    "@types/gtag.js": "0.0.7",
-    "@types/react-router-dom": "^5.1.8",
+    "@types/howler": "2.2.2",
     "@types/react-slick": "0.23.4",
     "@typescript-eslint/eslint-plugin": "4.28.0",
     "@typescript-eslint/parser": "4.28.0",

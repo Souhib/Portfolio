@@ -1,22 +1,63 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-unused-vars */
 
 import {
-  Abbana,
-  GRDF,
   Cloudeasier,
   Cloud,
   Enedis,
-  IPAG,
   Python,
-  SFUni,
   Epitech,
+  TVShows as TVShowsImages,
+  Kuruko,
+  KurukoThumb,
+  ErenThumb,
+  Goku,
+  DragonBallThumb,
+  Gon,
+  GonThumb,
+  LaCasaDePapel,
+  LeagueOfLegend,
+  Levi,
+  MrRobot,
+  LifeIsStrange,
+  BreakingBad,
+  Got,
+  Abbana,
+  GRDF,
+  IPAG,
+  SFUni,
   React,
   Database,
-  // Praetorium,
   IIM,
   DevOps,
-  Lilibow
+  Lilibow,
+  WalkingDead,
+  WorldOfWarcraft,
+  HotlineMiami
 } from 'assets/img'
+import { RickAndMorty, Thirteen } from 'assets/img/tvshows'
+import {
+  TwoOfUs,
+  RickAstley,
+  Dharma,
+  Beautiful,
+  DigitalLove,
+  Everyday,
+  NowOrNever,
+  Rebenga,
+  TakeOver
+} from 'assets/sounds'
+import { SNKVideo, KurokoVideo, DBZVideo, HXHVideo } from 'assets/videos'
+
+const s3BucketURL = 'https://d2y5iacgdowiek.cloudfront.net/'
+
+export const getVideoUrl = (assetName: string): string => {
+  return (s3BucketURL + 'videos/' + assetName)
+}
+
+export const getSoundUrl = (assetName: string): string => {
+  return (s3BucketURL + 'sounds/' + assetName)
+}
 
 export interface Techno {
   frameworks: string[]
@@ -26,14 +67,6 @@ export interface Techno {
 
 export interface TechnicalStackInterface {
   [key: string]: Techno
-}
-
-export enum TechnicalStackKeys {
-  PYTHON = 1,
-  CLOUD = 2,
-  DEVOPS = 3,
-  DATABASE = 4,
-  REACT = 5,
 }
 
 export const TechnicalStack: TechnicalStackInterface = {
@@ -64,9 +97,63 @@ export const TechnicalStack: TechnicalStackInterface = {
     bgColor: '#43a0b7',
     icon: React,
   },
- 
 }
 
+export enum TechnicalStackKeys {
+  PYTHON = 1,
+  CLOUD = 2,
+  DEVOPS = 3,
+  DATABASE = 4,
+  REACT = 5,
+}
+
+export const SongsInformations: PlaylistProps[] = [
+  {
+    title: 'Digital Love',
+    artist: 'Daft Punk',
+    src: DigitalLove
+  },
+  {
+    title: 'Dharma',
+    artist: 'KSHMR',
+    src: Dharma
+  },
+  {
+    title: 'Take Over',
+    artist: 'League of Legends',
+    src: TakeOver
+  },
+  {
+    title: 'Beautiful',
+    artist: 'Eminem',
+    src: Beautiful
+  },
+  {
+    title: 'Now Or Never',
+    artist: 'Kendrick Lamar',
+    src: NowOrNever
+  },
+  {
+    title: 'Rebenga',
+    artist: 'PNL',
+    src: Rebenga
+  },
+  {
+    title: 'Every day',
+    artist: 'Ninho',
+    src: Everyday
+  },
+  {
+    title: 'Never Gonna Give You Up',
+    artist: 'Rick Astley',
+    src: RickAstley
+  },
+  {
+    title: 'Grover Washington',
+    artist: 'Just The Two of Us',
+    src: TwoOfUs
+  },
+]
 
 export const experiences: ModalPropsType[] = [
   {
@@ -74,7 +161,7 @@ export const experiences: ModalPropsType[] = [
     bgColor: '#42004A',
     stack: 'Python | AWS | GCP',
     date: 'Feb 2021 - Aug 2021',
-    subtitle: 'Cloudeasieer',
+    subtitle: 'Cloudeasier',
     source: Cloudeasier,
     location: 'Paris - France',
     description: `⇨ 𝑴𝒀 𝑴𝑰𝑺𝑺𝑰𝑶𝑵: Develop solutions that allow companies to reduce the financial costs of their Cloud infrastructures and build tools to facilitate infrastructure analysis for consultants.
@@ -344,6 +431,67 @@ It is designed to encourage open-mindedness, meetings with influencers and exper
   }
 ]
 
+export const Mangas = [
+  {
+    src: getVideoUrl(SNKVideo),
+    icon: Levi,
+    thumb: ErenThumb,
+    title: 'Attack on Titans',
+  },
+  {
+    src: getVideoUrl(KurokoVideo),
+    icon: Kuruko,
+    thumb: KurukoThumb,
+    title: 'Kuroko\'s Basket',
+  },
+  {
+    src: getVideoUrl(DBZVideo),
+    icon: Goku,
+    thumb: DragonBallThumb,
+    title: 'Dragon Ball Z',
+  },
+  {
+    src: getVideoUrl(HXHVideo),
+    icon: GonThumb,
+    thumb: Gon,
+    title: 'Hunter x Hunter',
+  }
+]
+
+export const VideoGames: VideoGameType[] = [
+  {
+    title: 'League of legends',
+    img: LeagueOfLegend,
+    type: 'Favorite Game'
+  },
+  {
+    title: 'Life Is Strange',
+    img: LifeIsStrange,
+    type: 'Best Story'
+  },
+  {
+    title: 'The Walking Dead A New Frontier',
+    img: WalkingDead,
+    type: 'Favorite Art Style'
+  },
+  {
+    title: 'World of Warcraft',
+    img: WorldOfWarcraft,
+    type: 'Best Soundtrack'
+  },
+  {
+    title: 'Hotline Miami',
+    img: HotlineMiami,
+    type: 'Hardest Game'
+  },
+]
+
+export interface VideoGameType {
+  title: string
+  img: string
+  type: string
+}
+
 export interface ModalPropsType {
   title: string
   stack?: string
@@ -354,4 +502,41 @@ export interface ModalPropsType {
   source: string
   location: string
   description: string
+}
+
+export const TVShowsData = [
+  {
+    name: 'Mr.Robot',
+    image: MrRobot
+  },
+  {
+    name: 'La casa de papel',
+    image: LaCasaDePapel
+  },
+  {
+    name: 'Breaking Bad',
+    image: BreakingBad
+  },
+  {
+    name: 'Game of thrones',
+    image: Got
+  },
+  {
+    name: '13 Reasons why',
+    image: Thirteen
+  },
+  {
+    name: 'Rick & Morty',
+    image: RickAndMorty
+  },
+]
+
+export interface TVShowInterface {
+  name: string
+  image: string
+}
+export interface PlaylistProps {
+  title: string
+  artist: string
+  src: string
 }

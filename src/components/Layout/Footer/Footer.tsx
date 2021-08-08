@@ -15,7 +15,7 @@ import Subtitle from 'components/Text/Subtitle/Subtitle'
 const data = {
   socials: {
     mail: 'mailto:souhib.trabelsi@epitech.eu',
-    linkedin: 'https://www.linkedin.com/in/keddache/',
+    linkedin: 'https://www.linkedin.com/in/souhib-trabelsi/',
     github: 'https://github.com/Souhib'
   }
 }

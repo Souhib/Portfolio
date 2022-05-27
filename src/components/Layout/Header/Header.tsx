@@ -61,7 +61,7 @@ const Header: React.FunctionComponent = () => {
             textAlign={responsiveHorizontal}
             variant='big'
           >
-          Looking for a 6 months end of study internship
+          Looking for a Full-time job as a Software Engineer
           </Subtitle>
         </Stack>
       </Stack>
